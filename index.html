@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alphalumina — Solana Signal Intelligence</title>
+<meta name="description" content="Solana signal intelligence that scores, tests, and tracks every signal before it reaches you. Join the founding member waitlist.">
+<meta property="og:title" content="Alphalumina — Solana Signal Intelligence">
+<meta property="og:description" content="Every signal scored. Every outcome tracked. Founding members opening soon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alphalumina.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08080a;
+  --surface: #101014;
+  --line: #1e1e24;
+  --fg: #e4e4de;
+  --fg2: #8a8a82;
+  --fg3: #555550;
+  --accent: #c49a3a;
+  --accent-dim: rgba(196,154,58,0.12);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+
+/* --- Nav --- */
+nav {
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.logo em { color: var(--accent); font-style: italic; }
+nav a {
+  font-size: 13px;
+  color: var(--fg2);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 7px 16px;
+  transition: border-color 0.2s;
+}
+nav a:hover { border-color: var(--accent); color: var(--fg); }
+
+/* --- Hero --- */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  display: block;
+  color: var(--fg2);
+}
+.hero p {
+  font-size: 16px;
+  color: var(--fg2);
+  max-width: 480px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+/* --- Form --- */
+.email-form {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+}
+.email-form input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input::placeholder { color: var(--fg3); }
+.email-form input:focus { border-color: var(--accent); }
+.email-form button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.email-form button:hover { opacity: 0.88; }
+.form-note {
+  font-size: 12px;
+  color: var(--fg3);
+  margin-top: 10px;
+}
+.form-ok {
+  color: var(--accent);
+  font-size: 14px;
+  padding: 14px 0;
+  display: none;
+}
+
+/* --- Pillars --- */
+.pillars {
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 560px) {
+  .pillars { grid-template-columns: 1fr; gap: 28px; }
+}
+.pillar-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.pillar h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.pillar p {
+  font-size: 13px;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+
+/* --- Bottom CTA --- */
+.bottom {
+  padding: 64px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.bottom h2 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.bottom p {
+  font-size: 14px;
+  color: var(--fg2);
+  margin-bottom: 28px;
+}
+.bottom .email-form {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* --- Footer --- */
+footer {
+  padding: 32px 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--fg3);
+}
+footer .mark {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--fg2);
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 52px 0 48px; }
+  .email-form { flex-direction: column; }
+  .email-form button { width: 100%; }
+  footer { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav>
+    <div class="logo">Alpha<em>lumina</em></div>
+    <a href="#join">Join waitlist</a>
+  </nav>
+
+  <section class="hero">
+    <h1>
+      In a market that moves in seconds,
+      <em>we built something patient.</em>
+    </h1>
+    <p>Alphalumina is Solana signal intelligence. Every signal is scored against real on-chain data, tested through paper execution, and tracked across real outcomes — before it ever reaches you.</p>
+
+    <div id="hero-form">
+      <div class="email-form">
+        <input type="email" id="email1" placeholder="you@email.com" required>
+        <button onclick="submitForm('email1','ok1')">Join founding list</button>
+      </div>
+      <p class="form-note">Founding members get early access and locked pricing.</p>
+      <p class="form-ok" id="ok1">You're on the list. We'll be in touch.</p>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>Scored</h3>
+      <p>Every token is evaluated across wallet quality, momentum, liquidity, safety, and convergence. Scores are calibrated against millions of historical outcomes — not sentiment, not hype.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>Tested</h3>
+      <p>Signals run through staged paper validation before a single subscriber sees them. We track what we would have traded, how it would have performed, and what went wrong when it didn't.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>Tracked</h3>
+      <p>Every signal outcome is measured at 15 minutes, 1 hour, and 4 hours. Win rates, runner rates, expected value — published openly so you see what works and what doesn't.</p>
+    </div>
+  </section>
+
+  <section class="bottom" id="join">
+    <h2>We're building in the open.</h2>
+    <p>Founding member spots are limited. Get early access when we launch.</p>
+    <div class="email-form">
+      <input type="email" id="email2" placeholder="you@email.com" required>
+      <button onclick="submitForm('email2','ok2')">Join the list</button>
+    </div>
+    <p class="form-ok" id="ok2">You're on the list. We'll be in touch.</p>
+  </section>
+
+  <footer>
+    <span class="mark">Alpha<em style="font-style:italic;color:var(--accent)">lumina</em></span>
+    <span>Solana signal intelligence</span>
+  </footer>
+
+</div>
+
+<!-- Netlify Forms detection -->
+<form name="founding-members" data-netlify="true" netlify-honeypot="bot-field" style="display:none">
+  <input type="hidden" name="form-name" value="founding-members">
+  <input name="bot-field">
+  <input name="email" type="email">
+</form>
+
+<script>
+async function submitForm(inputId, okId) {
+  const input = document.getElementById(inputId);
+  const ok = document.getElementById(okId);
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) { input.focus(); return; }
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'founding-members', email }).toString()
+    });
+    input.parentElement.style.display = 'none';
+    ok.style.display = 'block';
+  } catch (e) {
+    input.parentElement.style.display = 'none';
+    ok.textContent = 'Something went wrong — try again later.';
+    ok.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
