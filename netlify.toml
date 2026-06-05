@@ -2,6 +2,17 @@
   command = ""
   publish = "."
 
+[[redirects]]
+  from = "https://www.alphalumina.com/*"
+  to = "https://alphalumina.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lander"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
