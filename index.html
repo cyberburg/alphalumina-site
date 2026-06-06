@@ -185,9 +185,11 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
   .tech-section{grid-template-columns:1fr}
 }
 @media(max-width:560px){
-  .hero h1{font-size:clamp(48px,14vw,72px)}
+  .hero h1{font-size:clamp(36px,11vw,56px)}
   .stats-grid{grid-template-columns:1fr}
+  .nav-links .nav-link{display:none}
   .hero-btns{flex-direction:column}.btn-gold,.btn-ghost{text-align:center}
+  .btn-ghost{color:var(--fg);border-color:rgba(255,255,255,.22)}
   .cta-form{flex-direction:column}.cta-form input{border-right:1px solid var(--border2);border-bottom:none}
   .cta-form button{width:100%}footer{flex-direction:column;gap:8px;text-align:center}.nl{display:none}
   .crypto-strip{gap:8px}.crypto-logo{padding:4px 8px}
@@ -671,8 +673,10 @@ document.querySelectorAll('.ft-reveal').forEach(el=>ftObs.observe(el));
 /* EMAIL */
 async function sub(){const el=document.getElementById('e1'),ok=document.getElementById('ok1'),em=el.value.trim();
 if(!em||!em.includes('@')){el.focus();return}
-try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'founding-members',email:em}).toString()})}catch(e){}
+try{const res=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'founding-members',email:em}).toString()});
+if(!res.ok)throw new Error();
 document.querySelector('.cta-form').style.display='none';document.querySelector('.cta-note').style.display='none';ok.style.display='block'}
+catch(e){el.style.borderColor='#ef4444';el.placeholder='Something went wrong — try again';el.value=''}}
 
 /* REVEAL */
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.07});
