@@ -146,6 +146,28 @@ transition:border-color .3s}
 .faq-q em{font-family:var(--mono);font-style:normal;font-size:10px;color:var(--gold);letter-spacing:.12em;flex-shrink:0;padding-top:3px}
 .faq-a{font-size:13px;font-weight:300;color:var(--fg2);line-height:1.75;padding-left:38px}
 
+/* Signal preview */
+.sig-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:52px;align-items:center}
+.tg-mockup{background:#17212b;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05)}
+.tg-header{display:flex;align-items:center;gap:12px;padding:14px 18px;background:#232e3c;border-bottom:1px solid rgba(255,255,255,.06)}
+.tg-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#7b5e1a);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#000;flex-shrink:0}
+.tg-hname{font-size:13px;font-weight:600;color:#fff;letter-spacing:.01em}
+.tg-hstatus{font-size:10px;color:#4ca3e0;font-family:var(--mono);letter-spacing:.06em}
+.tg-body{padding:18px}
+.tg-bubble{background:#1e2d3e;border-radius:12px 12px 12px 4px;padding:14px 16px;font-family:var(--mono);font-size:12px;line-height:1.8;color:#e8e8e8;word-break:break-word}
+.tg-bubble b{color:#fff;font-family:var(--sans);font-weight:700}
+.tg-bubble .tg-ok{color:#4fde78}
+.tg-bubble .tg-warn{color:#f0c63f}
+.tg-bubble .tg-link{color:#4ca3e0;text-decoration:none}
+.tg-ts{font-family:var(--mono);font-size:9px;color:#556;text-align:right;margin-top:8px;letter-spacing:.06em}
+.sig-breakdown{display:flex;flex-direction:column;gap:20px}
+.sbk-row{display:flex;flex-direction:column;gap:6px}
+.sbk-label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sbk-desc{font-size:13px;font-weight:300;color:var(--fg2);line-height:1.6}
+.sbk-bar{height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-top:4px}
+.sbk-fill{height:100%;border-radius:2px}
+@media(max-width:960px){.sig-preview-grid{grid-template-columns:1fr;gap:40px}}
+
 /* CTA — unchanged */
 .cta-section{padding:112px 0 96px;text-align:center;position:relative;overflow:hidden}
 .cta-glow{position:absolute;bottom:-20%;left:50%;transform:translateX(-50%);width:900px;height:600px;pointer-events:none;background:radial-gradient(ellipse,rgba(196,154,58,.11) 0%,transparent 60%)}
@@ -204,6 +226,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
   <div class="nav-links">
     <a href="#engine" class="nav-link">Engine</a>
     <a href="#tech" class="nav-link">Technology</a>
+    <a href="#signal" class="nav-link">Signal</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <a href="#join" class="nav-cta">Early Access</a>
   </div>
@@ -306,9 +329,9 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
 
 <!-- STATS — unchanged -->
 <div class="stats-section reveal"><div class="stats-grid">
-  <div class="stat"><div class="stat-label">Signals processed</div><div class="stat-num">5.9M+</div><div class="stat-desc">Historical signals with tracked outcomes</div></div>
+  <div class="stat"><div class="stat-label">Signals scored</div><div class="stat-num">258K+</div><div class="stat-desc">Score computations logged since launch</div></div>
   <div class="stat"><div class="stat-label">Outcome windows</div><div class="stat-num">3</div><div class="stat-desc">15-minute, 1-hour, 4-hour per signal</div></div>
-  <div class="stat"><div class="stat-label">Score dimensions</div><div class="stat-num">5</div><div class="stat-desc">Wallet · Liquidity · Momentum · Risk · Convergence</div></div>
+  <div class="stat"><div class="stat-label">Score dimensions</div><div class="stat-num">20+</div><div class="stat-desc">Wallet · Liquidity · Momentum · Risk · Convergence</div></div>
   <div class="stat"><div class="stat-label">Validation</div><div class="stat-num">Paper</div><div class="stat-desc">Every signal tested before subscriber exposure</div></div>
 </div></div>
 
@@ -463,6 +486,59 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
       <div class="faq-item"><div class="faq-q"><em>02</em>Why should the score be trusted?</div><div class="faq-a">It is anchored to wallet behavior, liquidity conditions, and historical outcome calibration — not sentiment, narrative, or mood.</div></div>
       <div class="faq-item"><div class="faq-q"><em>03</em>Who is this for?</div><div class="faq-a">Active Solana traders who want fewer, higher-conviction setups rather than endless pings pretending quantity is value.</div></div>
       <div class="faq-item"><div class="faq-q"><em>04</em>What do founding members get?</div><div class="faq-a">Early access, locked pricing, and a front-row seat to how the system performs before broader release. Small cohort, tighter feedback, less noise.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL PREVIEW -->
+<section class="section reveal" id="signal">
+  <div class="wrap">
+    <div class="stag">What you receive</div>
+    <h2 class="sh">A real signal <span class="dim">looks like this.</span></h2>
+    <p class="sp">Each alert carries the full scoring rationale — not just a ticker and a prayer. You see exactly why it surfaced and what risk factors were present.</p>
+    <div class="sig-preview-grid">
+      <div class="tg-mockup">
+        <div class="tg-header">
+          <div class="tg-avatar">α</div>
+          <div>
+            <div class="tg-hname">AlphaLumina · Signal Feed</div>
+            <div class="tg-hstatus">● live</div>
+          </div>
+        </div>
+        <div class="tg-body">
+          <div class="tg-bubble">
+            🚨 <b>SIGNAL — Score 78/100</b><br>
+            📈 <b>$CATCH</b> — MemeToken (Solana)<br>
+            💰 MC:$340K &nbsp;Vol:$1.2M &nbsp;Liq:$68K<br>
+            <span class="tg-ok">✅ smart_wallets:+7 | momentum:+13 | buy_ratio:+8</span><br>
+            <span class="tg-warn">⚠️ clone_risk:−3 | source_risk: medium</span><br>
+            <a class="tg-link" href="#">🔗 gmgn.ai/sol/token/4zZX…</a>
+            <div class="tg-ts">02:47 AM · paper validated ✓</div>
+          </div>
+        </div>
+      </div>
+      <div class="sig-breakdown">
+        <div class="sbk-row">
+          <div class="sbk-label">Smart Wallet Activity</div>
+          <div class="sbk-desc">7 tracked elite wallets entered before the signal fired. Early accumulation pattern detected.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:70%;background:var(--gold)"></div></div>
+        </div>
+        <div class="sbk-row">
+          <div class="sbk-label">Momentum Score</div>
+          <div class="sbk-desc">Volume velocity and price acceleration both trending above baseline within the last 15 minutes.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:85%;background:var(--teal)"></div></div>
+        </div>
+        <div class="sbk-row">
+          <div class="sbk-label">Buy Ratio</div>
+          <div class="sbk-desc">68% of recent swaps are buys. Order flow is directionally clean — not a balanced churn pattern.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:68%;background:var(--gold)"></div></div>
+        </div>
+        <div class="sbk-row">
+          <div class="sbk-label">Risk Flags</div>
+          <div class="sbk-desc">Clone risk flagged — similar structure to prior launches. Disclosed, not hidden. You decide.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:22%;background:#ef4444"></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
