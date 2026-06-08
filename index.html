@@ -329,8 +329,8 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
 
 <!-- STATS — unchanged -->
 <div class="stats-section reveal"><div class="stats-grid">
-  <div class="stat"><div class="stat-label">Signals scored</div><div class="stat-num">258K+</div><div class="stat-desc">Score computations logged since launch</div></div>
-  <div class="stat"><div class="stat-label">Outcome windows</div><div class="stat-num">3</div><div class="stat-desc">15-minute, 1-hour, 4-hour per signal</div></div>
+  <div class="stat"><div class="stat-label">Signals scored</div><div class="stat-num" id="stat-total">258K+</div><div class="stat-desc">Score computations logged since launch</div></div>
+  <div class="stat"><div class="stat-label">Signals today</div><div class="stat-num" id="stat-24h">—</div><div class="stat-desc">Tokens evaluated in the last 24 hours</div></div>
   <div class="stat"><div class="stat-label">Score dimensions</div><div class="stat-num">20+</div><div class="stat-desc">Wallet · Liquidity · Momentum · Risk · Convergence</div></div>
   <div class="stat"><div class="stat-label">Validation</div><div class="stat-num">Paper</div><div class="stat-desc">Every signal tested before subscriber exposure</div></div>
 </div></div>
@@ -757,6 +757,12 @@ catch(e){el.style.borderColor='#ef4444';el.placeholder='Something went wrong —
 /* REVEAL */
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.07});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+/* LIVE STATS */
+fetch('/stats.json').then(r=>r.json()).then(d=>{
+  const fmt=n=>n>=1000?(n/1000).toFixed(0)+'K+':String(n);
+  if(d.signals_scored_total){document.getElementById('stat-total').textContent=fmt(d.signals_scored_total);}
+  if(d.signals_24h){document.getElementById('stat-24h').textContent=fmt(d.signals_24h);}
+}).catch(()=>{});
 </script>
 <style>
 @keyframes scanIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
