@@ -41,9 +41,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--fg);font-size:15px
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,12,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .wordmark{font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c49a3a;text-decoration:none;display:flex;align-items:center}
 .wordmark .accent{color:#e0e0da;font-weight:300}
-.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links{display:flex;align-items:center;gap:36px;margin-left:auto}
 .nav-link{font-size:13px;font-weight:400;color:var(--fg2);text-decoration:none;letter-spacing:.03em;transition:color .2s}
 .nav-link:hover{color:var(--fg)}
+.nav-right{display:flex;align-items:center;gap:16px;margin-left:36px}
+.nav-burger{display:none;background:none;border:1px solid rgba(255,255,255,.18);color:var(--fg);width:38px;height:34px;font-size:17px;line-height:1;cursor:pointer;border-radius:6px}
 .nav-cta{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#000;background:var(--gold);padding:10px 22px;text-decoration:none;transition:opacity .2s}
 .nav-cta:hover{opacity:.85}
 
@@ -54,7 +56,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:68px;d
 .hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease-in-out infinite}
 @keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(196,154,58,.5)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(196,154,58,0)}}
 /* BIGGER headline */
-.hero h1{font-size:clamp(56px,9vw,120px);font-weight:300;line-height:.98;letter-spacing:-.045em;margin-bottom:24px}
+/* "Proven." must FIT the 45% hero column (45vw − 112px padding, ~5em wide at weight 800):
+   background-clip:text renders overflowing glyphs INVISIBLE, so overflow = missing letters */
+.hero h1{font-size:clamp(44px,8.3vw - 26px,120px);font-weight:300;line-height:.98;letter-spacing:-.045em;margin-bottom:24px}
 .hero h1 .line-dim{color:rgba(240,240,234,.45);display:block}
 .hero h1 .line-bold{font-weight:800;display:block;background:linear-gradient(115deg,var(--goldb) 0%,var(--gold) 40%,#a0702a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero h1 .line-white{color:var(--fg);display:block}
@@ -230,6 +234,15 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
   .hero h1{font-size:clamp(36px,11vw,56px)}
   .stats-grid{grid-template-columns:1fr}
   .nav-links .nav-link{display:none}
+  /* hamburger dropdown: burger shows; tapping it opens the links as a panel under the bar */
+  .nav-burger{display:block}
+  .nav-links{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(3,3,12,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
+    padding:6px 24px 18px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links.open .nav-link{display:block;padding:13px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-right{margin-left:0;gap:10px}
+  .nav-cta{padding:8px 14px;font-size:11px}
   .hero-btns{flex-direction:column}.btn-gold,.btn-ghost{text-align:center}
   .btn-ghost{color:var(--fg);border-color:rgba(255,255,255,.22)}
   .cta-form{flex-direction:column}.cta-form input{border-right:1px solid var(--border2);border-bottom:none}
@@ -243,25 +256,28 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
 <!-- NAV — unchanged -->
 <nav>
   <a href="/" class="wordmark"><svg viewBox="-28 -40 72 76" width="28" height="30" style="vertical-align:middle;margin-right:8px"><path d="M-24 30 L0 -24 L24 30" fill="none" stroke="#c49a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-14 12 L14 12" fill="none" stroke="#c49a3a" stroke-width="3.5" stroke-linecap="round"/><path d="M7 0 L7 30 L20 30" fill="none" stroke="#c49a3a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-30" r="5.5" fill="#c49a3a"/><circle cx="0" cy="-30" r="9" fill="none" stroke="#c49a3a" stroke-width="1" opacity=".35"/></svg>ALPHA<span class="accent">LUMINA</span></a>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#engine" class="nav-link">Engine</a>
     <a href="#tech" class="nav-link">Technology</a>
     <a href="#signal" class="nav-link">Signal</a>
     <a href="#faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
     <a href="#join" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
   </div>
 </nav>
 
 <!-- HERO — sphere kept, headline bigger, crypto strip added -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Solana Signal Intelligence</div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span>The Validation Layer for Meme-Coin Momentum</div>
     <h1>
       <span class="line-dim">Signal layer.</span>
       <span class="line-bold">Proven.</span>
       <span class="line-white">Not promised.</span>
     </h1>
-    <p class="hero-sub">Every Solana setup scored across five dimensions, paper-tested against real outcomes, then tracked — before it ever reaches a subscriber.</p>
+    <p class="hero-sub">Alpha Lumina finds early attention, rejects fake strength, explains every decision — and grades whether each signal was actually <em>tradeable</em>: liquidity depth, fill cost, round-trip risk. Before it ever reaches a subscriber.</p>
     <div class="hero-btns">
       <a href="#join" class="btn-gold">Join the Waitlist</a>
       <a href="#engine" class="btn-ghost">See How It Works</a>
@@ -269,54 +285,6 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
   </div>
   <div class="hero-right">
     <canvas id="hero-canvas"></canvas>
-    <!-- Doge Astronaut — center of sphere -->
-    <div class="doge-astro" id="dogeCenter">
-      <svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
-        <!-- Rocket exhaust glow -->
-        <ellipse cx="60" cy="125" rx="18" ry="6" fill="rgba(196,154,58,.25)"><animate attributeName="ry" values="6;10;6" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".3;.6;.3" dur="1.5s" repeatCount="indefinite"/></ellipse>
-        <ellipse cx="60" cy="125" rx="10" ry="4" fill="rgba(232,184,74,.4)"><animate attributeName="ry" values="4;7;4" dur="1s" repeatCount="indefinite"/></ellipse>
-        <!-- Suit body -->
-        <rect x="38" y="88" width="44" height="28" rx="12" fill="#1a1a2e" stroke="rgba(196,154,58,.35)" stroke-width="1.5"/>
-        <circle cx="52" cy="96" r="3" fill="rgba(196,154,58,.3)"/>
-        <circle cx="60" cy="96" r="3" fill="rgba(196,154,58,.3)"/>
-        <circle cx="68" cy="96" r="3" fill="rgba(196,154,58,.3)"/>
-        <!-- Helmet outer -->
-        <circle cx="60" cy="52" r="42" fill="none" stroke="rgba(196,154,58,.5)" stroke-width="2.5"/>
-        <circle cx="60" cy="52" r="39" fill="#0d0d1a"/>
-        <!-- Helmet glass -->
-        <circle cx="60" cy="52" r="36" fill="rgba(80,100,180,.06)" stroke="rgba(255,255,255,.08)" stroke-width=".8"/>
-        <!-- Glass reflection -->
-        <ellipse cx="45" cy="38" rx="12" ry="6" fill="rgba(255,255,255,.05)" transform="rotate(-20 45 38)"/>
-        <!-- Doge face -->
-        <ellipse cx="60" cy="56" rx="26" ry="23" fill="#d4a843"/>
-        <ellipse cx="60" cy="58" rx="22" ry="18" fill="#dbb24e"/>
-        <!-- Inner face (lighter muzzle) -->
-        <ellipse cx="60" cy="64" rx="14" ry="10" fill="#e8c65a"/>
-        <!-- Ears -->
-        <path d="M38 38 L28 16 L48 32 Z" fill="#c49a3a" stroke="rgba(196,154,58,.6)" stroke-width=".5"/>
-        <path d="M82 38 L92 16 L72 32 Z" fill="#c49a3a" stroke="rgba(196,154,58,.6)" stroke-width=".5"/>
-        <path d="M40 36 L33 22 L47 33 Z" fill="#dbb24e"/>
-        <path d="M80 36 L87 22 L73 33 Z" fill="#dbb24e"/>
-        <!-- Eyes -->
-        <ellipse cx="47" cy="50" rx="6" ry="6.5" fill="#1a1a1a"/>
-        <ellipse cx="73" cy="50" rx="6" ry="6.5" fill="#1a1a1a"/>
-        <circle cx="49" cy="48" r="2.5" fill="#fff"/>
-        <circle cx="75" cy="48" r="2.5" fill="#fff"/>
-        <circle cx="45" cy="52" r="1.2" fill="rgba(255,255,255,.5)"/>
-        <circle cx="71" cy="52" r="1.2" fill="rgba(255,255,255,.5)"/>
-        <!-- Nose -->
-        <ellipse cx="60" cy="60" rx="4.5" ry="3.5" fill="#1a1a1a"/>
-        <ellipse cx="59" cy="59" rx="1.5" ry="1" fill="rgba(255,255,255,.25)"/>
-        <!-- Mouth -->
-        <path d="M53 66 Q56 70 60 68 Q64 70 67 66" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- Tongue -->
-        <ellipse cx="60" cy="70" rx="4" ry="4.5" fill="#e87461"/>
-        <ellipse cx="60" cy="69" rx="3" ry="2" fill="#f08878"/>
-        <!-- Eyebrows (friendly) -->
-        <path d="M40 42 Q44 39 50 42" fill="none" stroke="#a07828" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M70 42 Q76 39 80 42" fill="none" stroke="#a07828" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-    </div>
     <!-- Orbiting logos — positioned by JS in sync with data stream lines -->
     <div class="orbit-logo" id="slogo-0"><img src="https://solana.com/src/img/branding/solanaLogoMark.png" alt="Solana"><span>Solana</span></div>
     <div class="orbit-logo" id="slogo-1"><img src="https://pump.fun/pump-logomark.svg?dpl=dpl_HxfgPG2sso8UYFsg3YnknWStvLBG" alt="Pump.fun"><span>Pump.fun</span></div>
@@ -505,7 +473,8 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
       <div class="faq-item"><div class="faq-q"><em>01</em>Is this just another alert channel?</div><div class="faq-a">No. The differentiator is disciplined scoring, paper validation, and visible outcome tracking. Speed without filtration is just faster bad decisions.</div></div>
       <div class="faq-item"><div class="faq-q"><em>02</em>Why should the score be trusted?</div><div class="faq-a">It is anchored to wallet behavior, liquidity conditions, and historical outcome calibration — not sentiment, narrative, or mood.</div></div>
       <div class="faq-item"><div class="faq-q"><em>03</em>Who is this for?</div><div class="faq-a">Active Solana traders who want fewer, higher-conviction setups rather than endless pings pretending quantity is value.</div></div>
-      <div class="faq-item"><div class="faq-q"><em>04</em>What do founding members get?</div><div class="faq-a">Early access, locked pricing, and a front-row seat to how the system performs before broader release. Small cohort, tighter feedback, less noise.</div></div>
+      <div class="faq-item"><div class="faq-q"><em>04</em>What does "tradeable" actually mean here?</div><div class="faq-a">That a realistic position could have entered after the flag and exited into the move — net of price impact against actual pool depth, fees, and a real stop. A token that "did 10x" after round-tripping through zero liquidity was never tradeable, and we grade it that way. Peak-price screenshots are how this industry lies to you.</div></div>
+      <div class="faq-item"><div class="faq-q"><em>05</em>What do founding members get?</div><div class="faq-a">Early access, locked pricing, and a front-row seat to how the system performs before broader release. Small cohort, tighter feedback, less noise.</div></div>
     </div>
   </div>
 </section>
@@ -513,50 +482,59 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
 <!-- SIGNAL PREVIEW -->
 <section class="section reveal" id="signal">
   <div class="wrap">
-    <div class="stag">What you receive</div>
-    <h2 class="sh">A real signal <span class="dim">looks like this.</span></h2>
-    <p class="sp">Each alert carries the full scoring rationale — not just a ticker and a prayer. You see exactly why it surfaced and what risk factors were present.</p>
+    <div class="stag">Receipts, not promises</div>
+    <h2 class="sh">Real receipts from <span class="dim">the grading engine.</span></h2>
+    <p class="sp">Two actual entries from our validation logs — June 2026, contract addresses included, outcomes graded after the fact. We publish the whole life of a signal, including the part where it dies. And we publish what we <em>rejected</em> — what looked hot but got vetoed is where most portfolios go to die.</p>
     <div class="sig-preview-grid">
       <div class="tg-mockup">
         <div class="tg-header">
           <div class="tg-avatar">α</div>
           <div>
-            <div class="tg-hname">AlphaLumina · Signal Feed</div>
-            <div class="tg-hstatus">● live</div>
+            <div class="tg-hname">AlphaLumina · Validation Log</div>
+            <div class="tg-hstatus">● graded outcomes</div>
           </div>
         </div>
         <div class="tg-body">
           <div class="tg-bubble">
-            🚨 <b>SIGNAL — Score 78/100</b><br>
-            📈 <b>$CATCH</b> — MemeToken (Solana)<br>
-            💰 MC:$340K &nbsp;Vol:$1.2M &nbsp;Liq:$68K<br>
-            <span class="tg-ok">✅ smart_wallets:+7 | momentum:+13 | buy_ratio:+8</span><br>
-            <span class="tg-warn">⚠️ clone_risk:−3 | source_risk: medium</span><br>
-            <a class="tg-link" href="#">🔗 gmgn.ai/sol/token/4zZX…</a>
-            <div class="tg-ts">02:47 AM · paper validated ✓</div>
+            ⚡ <b>FLAGGED — validation lane</b><br>
+            📈 <b>$WEN</b> — Solana · 2026-06-24 03:25 UTC<br>
+            💰 MC:$181K &nbsp;Vol:$354K &nbsp;Liq:$31.6K<br>
+            <span class="tg-ok">✅ 9 smart wallets · 5 KOLs · attention 67 · persisted 3+ windows</span><br>
+            <span class="tg-warn">⚠️ clone namespace flagged — disclosed, not hidden</span><br>
+            <a class="tg-link" href="https://gmgn.ai/sol/token/66pQgfLHEfbHSBgYSZSrKEdJHHaGiYbgCtNbz48Apump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/66pQ…pump</a>
+            <div class="tg-ts">outcome: liquidity 5.1× within 1h, zero drawdown — graded <b>tradeable</b> at $500 / $2K / $10K fill sizes · pool round-tripped 4h later → episode closed, fire invalidated. Logged, not hidden.</div>
+          </div>
+          <div class="tg-bubble">
+            🚫 <b>REJECTED — high attention, vetoed</b><br>
+            📉 <b>$ANSEM</b> — Solana · 2026-06-16 21:16 UTC<br>
+            💰 MC:$295K &nbsp;Vol:$322K &nbsp;Liq:$33K<br>
+            <span class="tg-warn">⛔ clone_risk −23 · dirty_runner −12 · source_quality −10</span><br>
+            <span class="tg-ok">attention score 74 — and the engine still said no</span><br>
+            <a class="tg-link" href="https://gmgn.ai/sol/token/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/9cRC…pump</a>
+            <div class="tg-ts">outcome: round-tripped to near-zero within 2h — chasing the attention bought exit liquidity. The later 25× revival was a <b>separate episode</b>, tracked separately, never credited to this rejected fire.</div>
           </div>
         </div>
       </div>
       <div class="sig-breakdown">
         <div class="sbk-row">
           <div class="sbk-label">Smart Wallet Activity</div>
-          <div class="sbk-desc">7 tracked elite wallets entered before the signal fired. Early accumulation pattern detected.</div>
-          <div class="sbk-bar"><div class="sbk-fill" style="width:70%;background:var(--gold)"></div></div>
+          <div class="sbk-desc">9 tracked elite wallets and 5 KOLs present at fire — and it had to persist across 3+ scan windows, not spike once.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:75%;background:var(--gold)"></div></div>
         </div>
         <div class="sbk-row">
-          <div class="sbk-label">Momentum Score</div>
-          <div class="sbk-desc">Volume velocity and price acceleration both trending above baseline within the last 15 minutes.</div>
-          <div class="sbk-bar"><div class="sbk-fill" style="width:85%;background:var(--teal)"></div></div>
+          <div class="sbk-label">Tradeability Gate</div>
+          <div class="sbk-desc">"Went up" isn't enough. We model fill cost against pool depth — price impact plus fees at $500, $2K and $10K position sizes — and grade net of it.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:82%;background:var(--teal)"></div></div>
         </div>
         <div class="sbk-row">
-          <div class="sbk-label">Buy Ratio</div>
-          <div class="sbk-desc">68% of recent swaps are buys. Order flow is directionally clean — not a balanced churn pattern.</div>
-          <div class="sbk-bar"><div class="sbk-fill" style="width:68%;background:var(--gold)"></div></div>
+          <div class="sbk-label">Round-Trip Rule</div>
+          <div class="sbk-desc">If liquidity dies to near-zero after a flag, that fire is <em>invalidated</em> — a later pump is a new episode and never retro-credits the original call. No resurrection accounting.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:60%;background:var(--gold)"></div></div>
         </div>
         <div class="sbk-row">
-          <div class="sbk-label">Risk Flags</div>
-          <div class="sbk-desc">Clone risk flagged — similar structure to prior launches. Disclosed, not hidden. You decide.</div>
-          <div class="sbk-bar"><div class="sbk-fill" style="width:22%;background:#ef4444"></div></div>
+          <div class="sbk-label">Rejection Discipline</div>
+          <div class="sbk-desc">Clone traps, dirty flow, bundled launches, late attention — vetoed and published with reasons. The rejects get graded too, so you can audit whether the vetoes were right.</div>
+          <div class="sbk-bar"><div class="sbk-fill" style="width:30%;background:#ef4444"></div></div>
         </div>
       </div>
     </div>
@@ -773,6 +751,11 @@ try{const res=await fetch('/',{method:'POST',headers:{'Content-Type':'applicatio
 if(!res.ok)throw new Error();
 document.querySelector('.cta-form').style.display='none';document.querySelector('.cta-note').style.display='none';ok.style.display='block'}
 catch(e){el.style.borderColor='#ef4444';el.placeholder='Something went wrong — try again';el.value=''}}
+
+/* MOBILE NAV */
+(function(){const b=document.getElementById('navBurger'),l=document.getElementById('navLinks');if(!b||!l)return;
+b.addEventListener('click',()=>{const open=l.classList.toggle('open');b.setAttribute('aria-expanded',open);b.textContent=open?'✕':'☰'});
+l.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click',()=>{l.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='☰'}))})();
 
 /* REVEAL */
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.07});
