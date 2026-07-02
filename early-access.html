@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Early Access — Alphalumina</title>
+<meta name="description" content="Join the founding cohort: full validation log, daily intelligence brief, locked founding pricing. What we promise — and what we deliberately don't.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.cta-form{display:flex;gap:0;max-width:440px;margin:34px 0 0;position:relative}
+.cta-form input{flex:1;background:var(--glass);border:1px solid var(--border2);border-right:none;color:var(--fg);font-family:var(--mono);font-size:13px;padding:15px 18px;outline:none}
+.cta-form input::placeholder{color:var(--fg2)}
+.cta-form button{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#000;background:var(--gold);border:none;padding:0 26px;cursor:pointer;transition:background .2s}
+.cta-form button:hover{background:var(--goldb)}
+.cta-note{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-top:14px}
+.cta-ok{display:none;font-family:var(--mono);font-size:13px;color:#4fde78;margin-top:22px}
+@media(max-width:560px){.cta-form{flex-direction:column}.cta-form input{border-right:1px solid var(--border2);border-bottom:none}.cta-form button{width:100%;padding:14px 0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Alpha<span class="lum">lumina</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/how-it-works" class="nav-link">How It Works</a>
+    <a href="/methodology" class="nav-link">Methodology</a>
+    <a href="/receipts" class="nav-link">Receipts</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="/early-access" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="stag">Founding List</div>
+    <h1>Build with the first <span class="dim">serious cohort.</span></h1>
+    <p class="sp">Founding spots are limited on purpose: better feedback, tighter iteration, less noise. You're joining a measurement platform while it's still proving itself in public — which is exactly the point.</p>
+
+    <div class="cta-form"><input type="email" id="e1" placeholder="your@email.com"><button onclick="sub()">Join Waitlist</button></div>
+    <p class="cta-note">No credit card · No spam · Founding pricing locked</p>
+    <p class="cta-ok" id="ok1">✓ You're on the list. We'll be in touch.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">What you get</div>
+    <h2 class="sh">The full log, <span class="dim">not the highlight reel.</span></h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="kicker">Access</div>
+        <h3>The validation log</h3>
+        <p>Every flag, every veto, every grade — with reasons. Why a token passed, why one was rejected, and what happened next. The receipts page is a sample; members see the stream.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Daily</div>
+        <h3>Intelligence brief</h3>
+        <p>A daily desk-style digest: clean discoveries, shadow-lane candidates, rejected high-attention tokens, revival watch, and yesterday's signals graded against what actually happened.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Terms</div>
+        <h3>Founding pricing, locked</h3>
+        <p>Early members keep founding terms as the platform grows. Small cohort, direct feedback line, and a front-row seat to the measurement discipline — including the negative results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">What we will not promise</div>
+    <h2 class="sh">Read this before <span class="dim">you sign up.</span></h2>
+    <p class="sp">No return promises. No "get in before the pump." No auto-trading riches. The engine currently trades <b>paper only</b>, our own scorer's predictive lift is published honestly (currently: none — it's a safety filter), and most tokens in this market go to zero. If that honesty is a dealbreaker, we're not for you. If it's the reason you're here — welcome.</p>
+    <p class="sp" style="margin-top:14px">Alphalumina is research software, not financial advice. See the <a href="/legal" style="color:var(--gold)">risk disclaimer</a>.</p>
+  </div>
+</section>
+
+<div class="wrap"><footer>
+  <div>
+    <div class="fmark">Alpha<span class="lum">lumina</span></div>
+    <p class="ft-note">The validation layer for meme-coin momentum. Research and measurement — not financial advice, not a trading bot, not an alert cannon.</p>
+  </div>
+  <div style="text-align:right">
+    <p class="ft-meta">alphalumina.com · © 2026</p>
+    <div class="ft-links">
+      <a href="/how-it-works" class="nav-link" style="font-size:11px">How It Works</a>
+      <a href="/methodology" class="nav-link" style="font-size:11px">Methodology</a>
+      <a href="/receipts" class="nav-link" style="font-size:11px">Receipts</a>
+      <a href="/faq" class="nav-link" style="font-size:11px">FAQ</a>
+      <a href="/legal" class="nav-link" style="font-size:11px">Legal &amp; Risk</a>
+    </div>
+  </div>
+</footer></div>
+
+<form name="founding-members" data-netlify="true" netlify-honeypot="bot-field" style="display:none">
+  <input type="hidden" name="form-name" value="founding-members"><input name="bot-field"><input name="email" type="email">
+</form>
+
+<script src="/assets/site.js"></script>
+<script>
+async function sub(){const el=document.getElementById('e1'),ok=document.getElementById('ok1'),em=el.value.trim();
+if(!em||!em.includes('@')){el.focus();return}
+try{const res=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'founding-members',email:em}).toString()});
+if(!res.ok)throw new Error();
+document.querySelector('.cta-form').style.display='none';document.querySelector('.cta-note').style.display='none';ok.style.display='block'}
+catch(e){el.style.borderColor='#ef4444';el.placeholder='Something went wrong — try again';el.value=''}}
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — Alphalumina</title>
+<meta name="description" content="The measurement rules behind Alphalumina: episode-aware grading, the round-trip rule, fill-cost-adjusted tradeability, out-of-sample discipline, and the verdicts we publish against ourselves.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Alpha<span class="lum">lumina</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/how-it-works" class="nav-link">How It Works</a>
+    <a href="/methodology" class="nav-link active">Methodology</a>
+    <a href="/receipts" class="nav-link">Receipts</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="/early-access" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="stag">Methodology</div>
+    <h1>The rules that keep <span class="dim">the numbers honest.</span></h1>
+    <p class="sp">Anyone can show you a chart that went up. The entire discipline of this platform is refusing the three lies that power every hype tool: peak-price screenshots, resurrection accounting, and survivorship. Here is exactly how we grade — including the tests we ran against our own ideas and lost.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Rule 01</div>
+    <h2 class="sh">The episode rule: <span class="dim">death ends the story.</span></h2>
+    <p class="sp">When a flagged token's liquidity collapses below <b>15% of its level at the flag</b>, that fire is <b>invalidated</b> — permanently. If the token later pumps, that pump is a <b>new episode</b> with its own entry point, its own grade, and its own record. It never retro-credits the original call.</p>
+    <p class="sp" style="margin-top:14px">Why this matters: the single biggest runner in our dataset round-tripped to near-zero within two hours of looking exciting, then revived 25× <em>weeks later</em>. Every hype tool counts that as a win for the original signal. Nobody could have held through a 100% drawdown. We grade it as what it was: a rejected trap, followed by a separate revival event.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Rule 02</div>
+    <h2 class="sh">Tradeable means <span class="dim">net of reality.</span></h2>
+    <p class="sp">A signal is graded <b>tradeable</b> only if it reached at least 2× within its original episode — <b>net of execution cost</b>. We model price impact against the actual pool depth plus fees at three position sizes ($500 / $2,000 / $10,000), and we check whether a realistic stop (−50% before the peak) would have killed the trade before the move ever happened.</p>
+    <p class="sp" style="margin-top:14px">A 3× "move" in a $30k pool that a $2,000 fill would have eaten is not a 3× for you. A 10× that drew down 60% first belongs to whoever had no stop and infinite nerve — which is nobody. Grades carry all three fill sizes so you can read them at your size.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Rule 03</div>
+    <h2 class="sh">Binary precision is banned. <span class="dim">Here's why.</span></h2>
+    <p class="sp">We once measured a promising lane at <b>28.6% "runner" precision</b> — respectable for this market. Then we graded the same fires episode-aware and net of fills: <b>0% tradeable</b>. Every single "runner" had round-tripped through near-zero liquidity before its move. The binary number was technically true and completely useless. We retired it, and we publish tradeable precision only.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Rule 04</div>
+    <h2 class="sh">Nothing is believed <span class="dim">until it survives out-of-sample.</span></h2>
+    <p class="sp">Every promising pattern gets a temporal split: discover it on older data, verify it on newer data it never saw. Patterns that fade out-of-sample are published as <b>failed</b> — including our own favorites. Signals run in shadow lanes, against real forward data, before they are allowed to touch anything a member sees.</p>
+
+    <div class="table-scroll"><table class="vtable">
+      <tr><th>Claim we tested</th><th>Verdict</th><th>What we measured</th></tr>
+      <tr>
+        <td>"Lots of smart wallets buying = bullish"</td>
+        <td class="v-validated">INVERTED — holds OOS</td>
+        <td>10+ tracked smart wallets was an <b>anti-signal</b>: 0.65× the baseline 2× rate in-sample, 0.26× out-of-sample. The crowd is exit liquidity. n=29,514 tokens.</td>
+      </tr>
+      <tr>
+        <td>"The first smart wallet in, early, predicts runners"</td>
+        <td class="v-refuted">FAILED OOS</td>
+        <td>Our own favorite candidate edge. 2.44× lift in-sample collapsed to 0.91× out-of-sample — an artifact. Published as failed, never shipped.</td>
+      </tr>
+      <tr>
+        <td>"KOLs with good track records keep winning"</td>
+        <td class="v-refuted">NO PERSISTENCE</td>
+        <td>Leak-free split (classify on early trades, measure on later ones): good-track wallets hit 2× on 38.5% of future buys, bad-track 35.0%. Past performance told you almost nothing. n=424 splittable trades.</td>
+      </tr>
+      <tr>
+        <td>"A high engine score means it will run"</td>
+        <td class="v-validated">NO — and we say so</td>
+        <td>Tokens scoring 65+ ran at 0.98× the baseline — no predictive edge over random. The scorer is a <b>safety filter</b>, not a crystal ball, and we froze it for prediction claims until that changes.</td>
+      </tr>
+      <tr>
+        <td>"Your gates are blocking winners"</td>
+        <td class="v-refuted">GATES PROTECT</td>
+        <td>30-day audit, n=386 eligible tokens: gate-blocked tokens were 3% tradeable vs 9% for those that passed. No gate group beat the control at meaningful sample size.</td>
+      </tr>
+      <tr>
+        <td>"The revival, not the first fire, is the tradeable event"</td>
+        <td class="v-pending">PROMISING — accruing</td>
+        <td>2 of 7 revival episodes graded tradeable, and both were the only tradeable runners anywhere in the lane's data. Small sample; gated at n≥20 forward before it may drive anything.</td>
+      </tr>
+    </table></div>
+
+    <p class="sp" style="margin-top:26px">This table is the product. Most of it says <b>no edge found</b> — that is what an honest measurement layer looks like in a market where ~85% of tokens die. When something finally survives every rule on this page, you'll know exactly how much scrutiny it beat.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Rule 05</div>
+    <h2 class="sh">External tools get base-rated, <span class="dim">not trusted.</span></h2>
+    <p class="sp">Discovery tools market their winners and bury their misses. Before any external source influences anything here, we capture its <b>entire</b> flag stream — every token it surfaces, hourly, winners and corpses alike — and grade that stream with the same rules above. If a tool's flags don't beat the base rate, it isn't intelligence; it's a lagging spotlight. Results get published either way.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Rules are cheap. Receipts aren't.</h2>
+    <p>See the grading applied to real tokens — including the ones that made us look wrong.</p>
+    <a href="/receipts" class="btn-gold">See the Receipts</a>
+  </div>
+</section>
+
+<div class="wrap"><footer>
+  <div>
+    <div class="fmark">Alpha<span class="lum">lumina</span></div>
+    <p class="ft-note">The validation layer for meme-coin momentum. Research and measurement — not financial advice, not a trading bot, not an alert cannon.</p>
+  </div>
+  <div style="text-align:right">
+    <p class="ft-meta">alphalumina.com · © 2026</p>
+    <div class="ft-links">
+      <a href="/how-it-works" class="nav-link" style="font-size:11px">How It Works</a>
+      <a href="/methodology" class="nav-link" style="font-size:11px">Methodology</a>
+      <a href="/receipts" class="nav-link" style="font-size:11px">Receipts</a>
+      <a href="/faq" class="nav-link" style="font-size:11px">FAQ</a>
+      <a href="/legal" class="nav-link" style="font-size:11px">Legal &amp; Risk</a>
+    </div>
+  </div>
+</footer></div>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

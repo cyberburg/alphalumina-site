@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How It Works — Alphalumina</title>
+<meta name="description" content="How the Alphalumina engine turns raw Solana launch data into graded, validated intelligence: ingestion, scoring, gates, lanes, and outcome grading.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Alpha<span class="lum">lumina</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/how-it-works" class="nav-link active">How It Works</a>
+    <a href="/methodology" class="nav-link">Methodology</a>
+    <a href="/receipts" class="nav-link">Receipts</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="/early-access" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="stag">The Engine</div>
+    <h1>Raw launches in. <span class="dim">Graded intelligence out.</span></h1>
+    <p class="sp">Alphalumina is a measurement system before it is a signal feed. Every token that enters the pipeline leaves with a decision <b>and the reasons for it</b> — passed, rejected, or watched — and every decision is graded later against what actually happened.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Pipeline</div>
+    <h2 class="sh">Four stages. <span class="dim">No exceptions.</span></h2>
+
+    <div class="step">
+      <div class="n">01</div>
+      <div>
+        <h3>Ingest everything</h3>
+        <p>New pump.fun launches, market microstructure, wallet flows, and social attention stream in continuously — roughly seven hundred scored candidates a day. Nothing is pre-filtered by vibes: the junk enters the pipeline too, because the junk is the control group.</p>
+        <div class="mono-note">~700 candidates/day · continuous snapshots of liquidity, volume, holders, wallets</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">02</div>
+      <div>
+        <h3>Score across five dimensions</h3>
+        <p>Momentum, liquidity quality, wallet intelligence (smart wallets and KOL presence, weighted by measured reliability — not follower counts), safety/structure, and attention convergence. Positive evidence is offset by explicit penalties: clone risk, dirty flow, bundled launches, source quality, crowding.</p>
+        <div class="mono-note">discovery score = positive stack − named penalties · every component logged per token</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">03</div>
+      <div>
+        <h3>Gate hard</h3>
+        <p>A score alone earns nothing. Execution gates check trusted-source quality, momentum reality (already dumping? already pumped?), liquidity depth, repeat-churn patterns, and token age. Most candidates die here — <b>by design</b>. When we audited the gates against outcomes, tokens they blocked were three times less likely to be tradeable than tokens that passed.</p>
+        <div class="mono-note">score bands: signal ≥35 · shadow ≥45 · paper-eligible ≥55 · alert ≥65 — each band earns a different privilege</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">04</div>
+      <div>
+        <h3>Validate on paper, grade the outcome</h3>
+        <p>Qualified signals enter paper positions with a real exit state machine — entries, stops, takes, all simulated against live market data with no real funds. Then the grading engine scores what happened: did it move, was the move reachable, did it round-trip, would a stop have survived. The grade is permanent and public to members — including when the grade is "we were wrong."</p>
+        <div class="mono-note">paper-only today · no live execution · outcomes graded episode-aware (see Methodology)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Lanes</div>
+    <h2 class="sh">Five lanes, <span class="dim">each with strict permissions.</span></h2>
+    <p class="sp">Every token lives in exactly one lane, and each lane has hard limits on what it may trigger. Experimental logic can never leak into the live feed: shadow lanes write to their own ledgers and must earn promotion with forward evidence.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="kicker">Lane 01 <span class="tag live">live</span></div>
+        <h3>Clean Early Discovery</h3>
+        <p>Fresh launches with clean structure, scored and gated as above. The proven core. This is the only lane allowed to produce alerts and paper positions.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">profile: clean_early_discovery v0.8</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Lane 02 <span class="tag shadow">shadow</span></div>
+        <h3>Dirty-But-Real</h3>
+        <p>Tokens vetoed for clone risk or dirty flow that nonetheless show real liquidity, smart wallets, and persistent attention. Measured silently — because our data shows these fires are usually traps at the moment they look most exciting. May trigger nothing.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">profile: dirty_but_real_shadow v0.3</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Lane 03 <span class="tag shadow">shadow</span></div>
+        <h3>Revival Watch</h3>
+        <p>When a flagged token's liquidity dies and later genuinely recovers, that recovery is a <b>new episode</b> — tracked as its own event. Early evidence says the revival, not the first fire, is where the real moves live. Accruing forward data before it may trigger anything.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">profile: revival_watch v0.1</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Lane 04 <span class="tag gold">telemetry</span></div>
+        <h3>High-Attention Rejected</h3>
+        <p>Tokens the attention layer loves and the scorer vetoes — the bucket where hype tools shine their spotlight. We publish these <b>with their outcomes</b>, because "what looked hot but got vetoed" is where most portfolios die.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">graded against the same rules as everything else</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Lane 05 <span class="tag rejected">denominator</span></div>
+        <h3>Rejected Noise</h3>
+        <p>Everything correctly discarded — the vast majority. Roughly 85% of new tokens die. This lane is the system working, and it is never deleted: the noise stream is the control group for every claim we publish.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">the denominator no one else shows you</p>
+      </div>
+      <div class="card">
+        <div class="kicker">External Tools <span class="tag shadow">base-rated</span></div>
+        <h3>Trust Nothing Untested</h3>
+        <p>External discovery tools enter through one door: a base-rate tracker that logs their <b>full</b> flag stream — winners and deaths — and grades it against our own outcome data. A screenshot of one winner is survivorship, not evidence.</p>
+        <p class="mono" style="margin-top:10px;font-size:10px;color:var(--gold)">tradeability gate: v0.2 · applied to every lane and every external flag</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>See how the grading works.</h2>
+    <p>The rules that decide what counts as tradeable — and what never did.</p>
+    <a href="/methodology" class="btn-gold">Read the Methodology</a>
+    &nbsp;&nbsp;<a href="/receipts" class="btn-ghost">See Real Receipts</a>
+  </div>
+</section>
+
+<div class="wrap"><footer>
+  <div>
+    <div class="fmark">Alpha<span class="lum">lumina</span></div>
+    <p class="ft-note">The validation layer for meme-coin momentum. Research and measurement — not financial advice, not a trading bot, not an alert cannon.</p>
+  </div>
+  <div style="text-align:right">
+    <p class="ft-meta">alphalumina.com · © 2026</p>
+    <div class="ft-links">
+      <a href="/how-it-works" class="nav-link" style="font-size:11px">How It Works</a>
+      <a href="/methodology" class="nav-link" style="font-size:11px">Methodology</a>
+      <a href="/receipts" class="nav-link" style="font-size:11px">Receipts</a>
+      <a href="/faq" class="nav-link" style="font-size:11px">FAQ</a>
+      <a href="/legal" class="nav-link" style="font-size:11px">Legal &amp; Risk</a>
+    </div>
+  </div>
+</footer></div>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
