@@ -38,15 +38,15 @@
   <div class="wrap">
     <div class="stag">Receipts</div>
     <h1>Dated. Addressed. <span class="dim">Graded after the fact.</span></h1>
-    <p class="sp">Every entry below is a real record from our validation logs — contract address included, so you can pull the chart yourself. We show flags that worked, vetoes that saved you, revivals that paid, and revivals that were traps. The grade is whatever the market said it was.</p>
+    <p class="sp">Every entry below is a real record from our validation logs — contract address included, so you can pull the chart yourself. We show flags that worked, the veto that missed a 700× runner, and the correction where we re-graded our own data. The grade is whatever the market said it was — even when that embarrasses us.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap">
-    <div class="stag">June–July 2026 · validation logs</div>
+    <div class="stag">June–July 2026 · validation logs · re-audited 2026-07-04</div>
     <h2 class="sh">Five lives of a signal.</h2>
-    <p class="sp">A clean signal traded start-to-finish, a shadow flag that was tradeable, a veto that was vindicated, a revival that paid, and a revival that kept lying. All graded episode-aware, net of fill cost, per the <a href="/methodology" style="color:var(--gold)">methodology</a>.</p>
+    <p class="sp">A clean signal traded start-to-finish, two shadow flags that were tradeable, our worst miss, and the correction that re-graded them all. Everything episode-aware, net of fill cost, per the <a href="/methodology" style="color:var(--gold)">methodology</a> — and when our own grading data turned out to be wrong, that became a receipt too.</p>
 
     <div class="receipt-grid">
 
@@ -79,62 +79,61 @@
             <span class="tg-ok">✅ 9 smart wallets · 5 KOLs · attention 67 · persisted 3+ windows</span><br>
             <span class="tg-warn">⚠️ clone namespace flagged — disclosed</span><br>
             <a class="tg-link" href="https://gmgn.ai/sol/token/66pQgfLHEfbHSBgYSZSrKEdJHHaGiYbgCtNbz48Apump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/66pQ…pump</a>
-            <div class="tg-ts">liquidity 5.1× within 1h · zero drawdown · clears 2× net of fills at $500/$2K/$10K · pool round-tripped 4h later → episode closed, fire invalidated</div>
+            <div class="tg-ts">liquidity 5.1× within 1h · zero drawdown · clears 2× net of fills at $500 and $2K (a $10K fill eats this pool — graded out at that size)</div>
           </div>
         </div>
-        <div class="verdict-line win">grade: tradeable (small) · honestly closed when the pool died</div>
+        <div class="verdict-line win">grade: tradeable (small) · size-honest — the pool decides your ceiling</div>
       </div>
 
       <div class="tg-mockup">
         <div class="tg-header">
           <div class="tg-avatar">α</div>
-          <div><div class="tg-hname">Rejected → Vindicated</div><div class="tg-hstatus">● high-attention veto</div></div>
+          <div><div class="tg-hname">Rejected → It Ran 700×</div><div class="tg-hstatus">● our worst miss · audited</div></div>
         </div>
         <div class="tg-body">
           <div class="tg-bubble">
             🚫 <b>REJECTED</b> — $ANSEM · 2026-06-16 21:16 UTC<br>
             💰 MC:$295K &nbsp;Vol:$322K &nbsp;Liq:$33K<br>
-            <span class="tg-warn">⛔ clone_risk −23 · dirty_runner −12 · source_quality −10</span><br>
-            <span class="tg-ok">attention score 74 — engine still said no</span><br>
+            <span class="tg-warn">⛔ vetoed: clone_risk −23 · dirty_runner −12 · source_quality −10</span><br>
+            <span class="tg-ok">what actually happened: −66% drawdown in the first 3h · 4× bounce within 90min of the low · weeks of chop · then a run to $160M+ (~700× from the veto)</span><br>
             <a class="tg-link" href="https://gmgn.ai/sol/token/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/9cRC…pump</a>
-            <div class="tg-ts">round-tripped to near-zero within 2h — chasing the attention bought exit liquidity · the famous 25× came WEEKS later as a separate revival episode, never credited to this fire</div>
+            <div class="tg-ts">the honest ledger: a −50% stop died in hour three, and capturing the run required weeks of holding through chop — but the veto still missed the biggest runner in our dataset. Both things are true. We publish both.</div>
           </div>
         </div>
-        <div class="verdict-line veto">grade: veto vindicated · hype tools showed the 25×, not the 2h death</div>
+        <div class="verdict-line trap">grade: missed runner · the recall problem, published instead of buried</div>
       </div>
 
       <div class="tg-mockup">
         <div class="tg-header">
           <div class="tg-avatar">α</div>
-          <div><div class="tg-hname">Revival → Paid</div><div class="tg-hstatus">● revival watch</div></div>
+          <div><div class="tg-hname">Shadow Flag → Paid</div><div class="tg-hstatus">● validation lane</div></div>
         </div>
         <div class="tg-body">
           <div class="tg-bubble">
-            🔁 <b>REVIVAL EPISODE 2</b> — $TJR · 2026-06-30 00:18 UTC<br>
-            💰 revival entry: MC:$1.13M &nbsp;Liq:$80.6K<br>
-            <span class="tg-ok">prior fire (06-29, $42K MC) died in 2h → invalidated · liquidity then genuinely recovered = new episode</span><br>
+            ⚡ <b>FLAGGED</b> — $TJR · 2026-06-29 13:33 UTC<br>
+            💰 MC:$42.5K &nbsp;Liq:$50.8K at flag<br>
+            <span class="tg-ok">7.4× liquidity within 22h from the flag · −19% max drawdown · clears 2× net of fills at $500/$2K/$10K</span><br>
             <a class="tg-link" href="https://gmgn.ai/sol/token/4U4U8oXwDyVXGeTffMXds4NAgBgLFwq3wNvTCRTSpump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/4U4U…pump</a>
-            <div class="tg-ts">4.6× within 12h from the revival entry · zero drawdown · clears 2× net of fills at $500/$2K/$10K</div>
+            <div class="tg-ts">a clone-namespace token the main scorer vetoed and the shadow lane flagged — measured silently, graded tradeable. Evidence like this is how a shadow lane earns promotion; it gets none until the sample is big enough.</div>
           </div>
         </div>
-        <div class="verdict-line win">grade: tradeable from revival · the FIRST fire stays graded as a loss</div>
+        <div class="verdict-line win">grade: tradeable runner · shadow-lane evidence, not a member alert</div>
       </div>
 
       <div class="tg-mockup">
         <div class="tg-header">
           <div class="tg-avatar">α</div>
-          <div><div class="tg-hname">Revival → Trap</div><div class="tg-hstatus">● revival watch</div></div>
+          <div><div class="tg-hname">The Correction</div><div class="tg-hstatus">● 2026-07-04 · grader audit</div></div>
         </div>
         <div class="tg-body">
           <div class="tg-bubble">
-            ♻️ <b>REVIVAL EPISODES 2, 3, 4</b> — $DOG · 2026-06-30 → 07-01<br>
-            💰 revival entries: $7.9M → $6.0M → $2.8M MC<br>
-            <span class="tg-warn">⚠️ three consecutive "recoveries" · every one died again · peak multiple ≤1.3× per episode</span><br>
-            <a class="tg-link" href="https://gmgn.ai/sol/token/9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/9gAV…pump</a>
-            <div class="tg-ts">not every revival is a comeback — most are the same trap on a delay · each episode graded and failed independently</div>
+            🔧 <b>WE GRADED OURSELVES WRONG — AND CAUGHT IT</b><br>
+            <span class="tg-warn">⚠️ our liquidity feed emits 0.0 when it loses a pool (token migrates exchanges) while the market keeps trading. The grader read those zeros as deaths.</span><br>
+            <span class="tg-ok">✅ caught by cross-checking independent price data · grader fixed (zero-liquidity rows = missing data, never death) · every fire re-graded · this page updated the same day</span><br>
+            <div class="tg-ts">what changed: the lane's tradeable precision went 0% → 25%, the "revival episode" pattern we'd been excited about turned out to be an artifact of fake deaths and was retired, and ANSEM's card went from "veto vindicated" to "worst miss." When the data changes, the story changes. That's the product.</div>
           </div>
         </div>
-        <div class="verdict-line trap">grade: untradeable, three times · revivals get no benefit of the doubt</div>
+        <div class="verdict-line veto">grade: correction published · locked with a regression test so it can't recur</div>
       </div>
 
     </div>
@@ -149,7 +148,7 @@
       <div class="card">
         <div class="kicker"><span class="tag rejected">retired</span></div>
         <h3>Binary "runner" precision</h3>
-        <p>A lane once graded <b>28.6%</b> of its flags as runners. Episode-aware and net of fills, the same flags were <b>0% tradeable</b> — every "runner" had round-tripped through near-zero first. The flattering number was real and useless. We publish tradeable precision only.</p>
+        <p>Binary says "it ran"; tradeable asks whether YOU could have caught it. In our re-audited lane data the gap is stark: a fire graded a 184× binary "runner" still carried a −66% drawdown that kills any real stop, and pools too thin for a $10K fill grade out at that size. Binary counts flatter the teller. We publish tradeable precision, by fill size, or nothing.</p>
       </div>
       <div class="card">
         <div class="kicker"><span class="tag rejected">retired</span></div>

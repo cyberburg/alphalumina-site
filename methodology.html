@@ -39,7 +39,8 @@
     <div class="stag">Rule 01</div>
     <h2 class="sh">The episode rule: <span class="dim">death ends the story.</span></h2>
     <p class="sp">When a flagged token's liquidity collapses below <b>15% of its level at the flag</b>, that fire is <b>invalidated</b> — permanently. If the token later pumps, that pump is a <b>new episode</b> with its own entry point, its own grade, and its own record. It never retro-credits the original call.</p>
-    <p class="sp" style="margin-top:14px">Why this matters: the single biggest runner in our dataset round-tripped to near-zero within two hours of looking exciting, then revived 25× <em>weeks later</em>. Every hype tool counts that as a win for the original signal. Nobody could have held through a 100% drawdown. We grade it as what it was: a rejected trap, followed by a separate revival event.</p>
+    <p class="sp" style="margin-top:14px">Two of our shadow-lane fires died exactly this way — observed liquidity walking down to nothing over days, no recovery. Their grades are failures, permanently, no matter what any later clone of the ticker does.</p>
+    <p class="sp" style="margin-top:14px"><b>And one correction, because this rule bit us:</b> our liquidity feed emits 0.0 when it loses a pool (tokens migrate exchanges) while trading continues. For two weeks the grader read those zeros as deaths — it invalidated fires on tokens that were alive, including one that later ran ~700×. We caught it by cross-checking independent price data, fixed the grader (zero-liquidity rows are missing data, never death), re-graded every fire, and published the changes the same day. Invalidation now requires <em>observed</em> nonzero liquidity below the threshold — death must be proven, not inferred from silence.</p>
   </div>
 </section>
 
@@ -56,7 +57,7 @@
   <div class="wrap">
     <div class="stag">Rule 03</div>
     <h2 class="sh">Binary precision is banned. <span class="dim">Here's why.</span></h2>
-    <p class="sp">We once measured a promising lane at <b>28.6% "runner" precision</b> — respectable for this market. Then we graded the same fires episode-aware and net of fills: <b>0% tradeable</b>. Every single "runner" had round-tripped through near-zero liquidity before its move. The binary number was technically true and completely useless. We retired it, and we publish tradeable precision only.</p>
+    <p class="sp">Binary asks "did it run?" Tradeable asks "could <em>you</em> have caught it?" The gap is brutal: our biggest binary "runner" carried a −66% drawdown in its first three hours — any realistic stop dies before the move — and needed weeks of holding through chop to reach its peak. Thin pools grade out entirely at larger fill sizes. A binary hit-rate flatters the teller; tradeable precision, stated per fill size with drawdown and time-to-peak attached, is the only number a trader can act on. We publish that, or nothing.</p>
   </div>
 </section>
 
@@ -95,8 +96,13 @@
       </tr>
       <tr>
         <td>"The revival, not the first fire, is the tradeable event"</td>
-        <td class="v-pending">PROMISING — accruing</td>
-        <td>2 of 7 revival episodes graded tradeable, and both were the only tradeable runners anywhere in the lane's data. Small sample; gated at n≥20 forward before it may drive anything.</td>
+        <td class="v-refuted">RETIRED — was an artifact</td>
+        <td>Every detected "revival" followed a fake death: a liquidity-feed dropout the grader misread as a rug. With artifact rows excluded, zero revival episodes remain. We had started building on this pattern; the audit killed it first.</td>
+      </tr>
+      <tr>
+        <td>"Our own grading data is trustworthy"</td>
+        <td class="v-validated">NO — verified, corrected, test-locked</td>
+        <td>2026-07-04 audit: the liquidity feed emits 0.0 on pool migration while trading continues; the grader read that as death and mis-graded fires (one "round-trip" later ran ~700×). Fixed, re-graded, regression-locked. The measurement layer measures itself too.</td>
       </tr>
     </table></div>
 
