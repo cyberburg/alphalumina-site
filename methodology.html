@@ -40,7 +40,7 @@
     <h2 class="sh">The episode rule: <span class="dim">death ends the story.</span></h2>
     <p class="sp">When a flagged token's liquidity collapses below <b>15% of its level at the flag</b>, that fire is <b>invalidated</b> — permanently. If the token later pumps, that pump is a <b>new episode</b> with its own entry point, its own grade, and its own record. It never retro-credits the original call.</p>
     <p class="sp" style="margin-top:14px">Two of our shadow-lane fires died exactly this way — observed liquidity walking down to nothing over days, no recovery. Their grades are failures, permanently, no matter what any later clone of the ticker does.</p>
-    <p class="sp" style="margin-top:14px"><b>And one correction, because this rule bit us:</b> our liquidity feed emits 0.0 when it loses a pool (tokens migrate exchanges) while trading continues. For two weeks the grader read those zeros as deaths — it invalidated fires on tokens that were alive, including one that later ran ~700×. We caught it by cross-checking independent price data, fixed the grader (zero-liquidity rows are missing data, never death), re-graded every fire, and published the changes the same day. Invalidation now requires <em>observed</em> nonzero liquidity below the threshold — death must be proven, not inferred from silence.</p>
+    <p class="sp" style="margin-top:14px"><b>And one correction, because this rule bit us:</b> our liquidity feed emits 0.0 when it loses a pool (tokens migrate exchanges) while trading continues. For two weeks the grader read those zeros as deaths — it invalidated fires on tokens that were alive and still trading. We caught it by cross-checking independent price data, fixed the grader (zero-liquidity rows are missing data, never death), re-graded every fire, and published the changes the same day. Invalidation now requires <em>observed</em> nonzero liquidity below the threshold — death must be proven, not inferred from silence.</p>
   </div>
 </section>
 
@@ -57,7 +57,7 @@
   <div class="wrap">
     <div class="stag">Rule 03</div>
     <h2 class="sh">Binary precision is banned. <span class="dim">Here's why.</span></h2>
-    <p class="sp">Binary asks "did it run?" Tradeable asks "could <em>you</em> have caught it?" The gap is brutal: our biggest binary "runner" carried a −66% drawdown in its first three hours — any realistic stop dies before the move — and needed weeks of holding through chop to reach its peak. Thin pools grade out entirely at larger fill sizes. A binary hit-rate flatters the teller; tradeable precision, stated per fill size with drawdown and time-to-peak attached, is the only number a trader can act on. We publish that, or nothing.</p>
+    <p class="sp">Binary asks "did it run?" Tradeable asks "could <em>you</em> have caught it?" The gap is brutal: a token can print a monster multiple while carrying a drawdown that kills any realistic stop on the way, and can demand weeks of holding through chop that nobody survives. Thin pools grade out entirely at larger fill sizes. A binary hit-rate flatters the teller; tradeable precision, stated per fill size with drawdown and time-to-peak attached, is the only number a trader can act on. We publish that, or nothing.</p>
   </div>
 </section>
 
@@ -102,7 +102,7 @@
       <tr>
         <td>"Our own grading data is trustworthy"</td>
         <td class="v-validated">NO — verified, corrected, test-locked</td>
-        <td>2026-07-04 audit: the liquidity feed emits 0.0 on pool migration while trading continues; the grader read that as death and mis-graded fires (one "round-trip" later ran ~700×). Fixed, re-graded, regression-locked. The measurement layer measures itself too.</td>
+        <td>2026-07-04 audit: the liquidity feed emits 0.0 on pool migration while trading continues; the grader read that as death and mis-graded fires on living tokens. Fixed, re-graded, regression-locked — and the countable track record restarts from the audited instrument. The measurement layer measures itself too.</td>
       </tr>
     </table></div>
 

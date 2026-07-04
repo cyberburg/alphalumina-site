@@ -38,15 +38,15 @@
   <div class="wrap">
     <div class="stag">Receipts</div>
     <h1>Dated. Addressed. <span class="dim">Graded after the fact.</span></h1>
-    <p class="sp">Every entry below is a real record from our validation logs — contract address included, so you can pull the chart yourself. We show flags that worked, the veto that missed a 700× runner, and the correction where we re-graded our own data. The grade is whatever the market said it was — even when that embarrasses us.</p>
+    <p class="sp">Every entry below is a real record from our validation logs — contract address included, so you can pull the chart yourself. We show flags that worked, at honest fill sizes, and the correction where we re-graded our own data. The grade is whatever the market said it was — even when that embarrasses us.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap">
     <div class="stag">June–July 2026 · validation logs · re-audited 2026-07-04</div>
-    <h2 class="sh">Five lives of a signal.</h2>
-    <p class="sp">A clean signal traded start-to-finish, two shadow flags that were tradeable, our worst miss, and the correction that re-graded them all. Everything episode-aware, net of fill cost, per the <a href="/methodology" style="color:var(--gold)">methodology</a> — and when our own grading data turned out to be wrong, that became a receipt too.</p>
+    <h2 class="sh">Four lives of a signal.</h2>
+    <p class="sp">A clean signal traded start-to-finish, two shadow flags that were tradeable, and the correction that re-graded them all — everything episode-aware, net of fill cost, per the <a href="/methodology" style="color:var(--gold)">methodology</a>. One epoch note, because honesty cuts both ways: entries dated before <b>2026-07-04</b> were measured retroactively while the platform was still being built and its grader audited. They demonstrate the method; the countable forward track record starts 2026-07-04, with a proven instrument.</p>
 
     <div class="receipt-grid">
 
@@ -88,24 +88,6 @@
       <div class="tg-mockup">
         <div class="tg-header">
           <div class="tg-avatar">α</div>
-          <div><div class="tg-hname">Rejected → It Ran 700×</div><div class="tg-hstatus">● our worst miss · audited</div></div>
-        </div>
-        <div class="tg-body">
-          <div class="tg-bubble">
-            🚫 <b>REJECTED</b> — $ANSEM · 2026-06-16 21:16 UTC<br>
-            💰 MC:$295K &nbsp;Vol:$322K &nbsp;Liq:$33K<br>
-            <span class="tg-warn">⛔ vetoed: clone_risk −23 · dirty_runner −12 · source_quality −10</span><br>
-            <span class="tg-ok">what actually happened: −66% drawdown in the first 3h · 4× bounce within 90min of the low · weeks of chop · then a run to $160M+ (~700× from the veto)</span><br>
-            <a class="tg-link" href="https://gmgn.ai/sol/token/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump" target="_blank" rel="noopener">🔗 gmgn.ai/sol/token/9cRC…pump</a>
-            <div class="tg-ts">the honest ledger: a −50% stop died in hour three, and capturing the run required weeks of holding through chop — but the veto still missed the biggest runner in our dataset. Both things are true. We publish both.</div>
-          </div>
-        </div>
-        <div class="verdict-line trap">grade: missed runner · the recall problem, published instead of buried</div>
-      </div>
-
-      <div class="tg-mockup">
-        <div class="tg-header">
-          <div class="tg-avatar">α</div>
           <div><div class="tg-hname">Shadow Flag → Paid</div><div class="tg-hstatus">● validation lane</div></div>
         </div>
         <div class="tg-body">
@@ -130,7 +112,7 @@
             🔧 <b>WE GRADED OURSELVES WRONG — AND CAUGHT IT</b><br>
             <span class="tg-warn">⚠️ our liquidity feed emits 0.0 when it loses a pool (token migrates exchanges) while the market keeps trading. The grader read those zeros as deaths.</span><br>
             <span class="tg-ok">✅ caught by cross-checking independent price data · grader fixed (zero-liquidity rows = missing data, never death) · every fire re-graded · this page updated the same day</span><br>
-            <div class="tg-ts">what changed: the lane's tradeable precision went 0% → 25%, the "revival episode" pattern we'd been excited about turned out to be an artifact of fake deaths and was retired, and ANSEM's card went from "veto vindicated" to "worst miss." When the data changes, the story changes. That's the product.</div>
+            <div class="tg-ts">what changed: the lane's tradeable precision was re-graded, the "revival episode" pattern we'd been excited about turned out to be an artifact of fake deaths and was retired, and every affected page was corrected the same day. When the data changes, the story changes. That's the product.</div>
           </div>
         </div>
         <div class="verdict-line veto">grade: correction published · locked with a regression test so it can't recur</div>
@@ -148,7 +130,7 @@
       <div class="card">
         <div class="kicker"><span class="tag rejected">retired</span></div>
         <h3>Binary "runner" precision</h3>
-        <p>Binary says "it ran"; tradeable asks whether YOU could have caught it. In our re-audited lane data the gap is stark: a fire graded a 184× binary "runner" still carried a −66% drawdown that kills any real stop, and pools too thin for a $10K fill grade out at that size. Binary counts flatter the teller. We publish tradeable precision, by fill size, or nothing.</p>
+        <p>Binary says "it ran"; tradeable asks whether YOU could have caught it. A token can print a huge binary multiple while carrying a drawdown that kills any real stop on the way, and a pool too thin for a $10K fill grades out at that size no matter what the chart did. Binary counts flatter the teller. We publish tradeable precision, by fill size, or nothing.</p>
       </div>
       <div class="card">
         <div class="kicker"><span class="tag rejected">retired</span></div>
