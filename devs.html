@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dev Reality — Alphalumina</title>
+<meta name="description" content="Measured facts about pump.fun creators: 800K+ launches, graduation base rates, launch farms, sell-timing and buyback patterns, and the one dev signal that survived out-of-sample testing.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.btable{width:100%;border-collapse:collapse;margin-top:22px;font-size:13px}
+.btable td{padding:11px 12px;border-bottom:1px solid var(--border);font-weight:300;color:var(--fg2)}
+.btable .mono{font-family:var(--mono);font-size:11.5px}
+.btable .quiet{color:var(--fg2);font-style:italic}
+.btable a{color:#4ca3e0;text-decoration:none}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.stat{background:var(--glass);border:1px solid var(--border);padding:18px}
+.stat .v{font-family:var(--mono);font-size:22px;color:var(--fg)}
+.stat .l{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--fg2);margin-top:6px}
+@media(max-width:960px){.statrow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Alpha<span class="lum">lumina</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/how-it-works" class="nav-link">How It Works</a>
+    <a href="/methodology" class="nav-link">Methodology</a>
+    <a href="/receipts" class="nav-link">Receipts</a>
+    <a href="/brief" class="nav-link">Brief</a>
+    <a href="/board" class="nav-link">Board</a>
+    <a href="/devs" class="nav-link active">Devs</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="/early-access" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="stag">Dev Reality · measured from 788,830 launches</div>
+    <h1>Who is actually <span class="dim">launching these coins?</span></h1>
+    <p class="sp">We watch every pump.fun launch from our own event stream and tie each one to the
+    wallet that created it. These are the measured facts — base rates, launch factories, sell timing,
+    buybacks — with the wallets linked so you can verify everything. Facts, not accusations;
+    nothing here is financial advice.</p>
+    <p class="brief-meta" style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg2);margin-top:10px">generated 2026-07-06 05:46 UTC · creator = wallet signing the create tx · graduation = bonding-curve completion</p>
+    <div class="statrow">
+      <div class="stat"><div class="v">0.98%</div><div class="l">of launches ever graduate</div></div>
+      <div class="stat"><div class="v">160,494</div><div class="l">creator wallets measured</div></div>
+      <div class="stat"><div class="v">1,047</div><div class="l">wallets with 100+ launches (380,871 launches)</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">The launch industry</div>
+    <h2 class="sh">Most launches are <span class="dim">manufactured, not made.</span></h2>
+    <p class="sp">The biggest creator wallets are factories: hundreds of launches per day, the same
+    ticker relaunched over and over, almost none completing the curve. If you've ever felt like the
+    trenches are a conveyor belt — here is the conveyor belt.</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td class="mono" style="font-weight:600">wallet</td><td class="mono">launches</td><td class="mono">per day</td><td class="mono">graduated</td><td class="mono">grad rate</td><td class="mono">ticker reuse</td></tr>
+      <tr><td class="mono"><a href="https://gmgn.ai/sol/address/bwamJzztZsepfkteWRChggmXuiiCQvpLqPietdNfSXa" target="_blank" rel="noopener">bwamJz…fSXa</a></td><td class="mono">10,174</td><td class="mono">368.78</td><td class="mono">112</td><td class="mono">1.1%</td><td class="mono">52.0%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/DVhwSE98dHBtEGnQcYyAiEzE2XFjGnGwwuv9n1Ypnre9" target="_blank" rel="noopener">DVhwSE…nre9</a></td><td class="mono">5,824</td><td class="mono">212.69</td><td class="mono">0</td><td class="mono">0.0%</td><td class="mono">83.2%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/7FVfSdnR9VPGjMtmBP1Hz9C2DFTpoNX8gVVRmnimnGt9" target="_blank" rel="noopener">7FVfSd…nGt9</a></td><td class="mono">5,758</td><td class="mono">211.05</td><td class="mono">10</td><td class="mono">0.17%</td><td class="mono">98.4%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/F3WmHxwyCieSzPv4ALY2tmXTDmgUgpT81fBkAhKNFLMS" target="_blank" rel="noopener">F3WmHx…FLMS</a></td><td class="mono">5,580</td><td class="mono">215.18</td><td class="mono">0</td><td class="mono">0.0%</td><td class="mono">98.9%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/9RrKUhRpbPDNxR7x88ZsCgdtqPHUfwYPjj4JdpV4FBj9" target="_blank" rel="noopener">9RrKUh…FBj9</a></td><td class="mono">4,912</td><td class="mono">219.59</td><td class="mono">6</td><td class="mono">0.12%</td><td class="mono">98.2%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/BuBMjNCr1UBpnPfywwAYcrjpSySzPDtGU5cNav2Y7SWU" target="_blank" rel="noopener">BuBMjN…7SWU</a></td><td class="mono">3,620</td><td class="mono">139.53</td><td class="mono">2</td><td class="mono">0.06%</td><td class="mono">18.0%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/8eRqKaZProoVrmhUtCPtUotP3XT2xq9Pj7697jjoHiQB" target="_blank" rel="noopener">8eRqKa…HiQB</a></td><td class="mono">3,476</td><td class="mono">138.2</td><td class="mono">10</td><td class="mono">0.29%</td><td class="mono">99.7%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/4FEGV9upZPiRejpSu9FLgxuwcZLFY4HkizkN6EBQDAiU" target="_blank" rel="noopener">4FEGV9…DAiU</a></td><td class="mono">3,071</td><td class="mono">111.22</td><td class="mono">48</td><td class="mono">1.56%</td><td class="mono">99.8%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/EwNVgVLjVXbKfi1S1yh6T1MZr3SQ6QHPAoBtwi2cnqYE" target="_blank" rel="noopener">EwNVgV…nqYE</a></td><td class="mono">2,771</td><td class="mono">127.12</td><td class="mono">1</td><td class="mono">0.04%</td><td class="mono">93.6%</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/AWGAwNm53RTSjxPEqxiYwwhXjcjLnMVFrd4gYK2scQT6" target="_blank" rel="noopener">AWGAwN…cQT6</a></td><td class="mono">2,562</td><td class="mono">103.15</td><td class="mono">17</td><td class="mono">0.66%</td><td class="mono">95.2%</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Sell timing &amp; buybacks — the norms, measured</div>
+    <h2 class="sh">"Dev sold" isn't the scandal. <span class="dim">The repeat business is.</span></h2>
+    <p class="sp">Selling the initial dev allocation early is standard practice — many buyers read a
+    clean early dev exit as a <em>good</em> sign (no overhang left to dump), and some devs buy back in
+    later to re-commit. So we don't score a fast sell by itself. We measure it in context: how often,
+    across how many launches, at what graduation rate, and whether the dev ever comes back. A trader
+    exiting one launch and a factory exiting four hundred a day are different animals — the table
+    makes the difference visible. Recent-window samples per wallet, not lifetime audits.</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td class="mono" style="font-weight:600">wallet</td><td class="mono">total launches</td><td class="mono">launches in sample</td><td class="mono">first-sell &le;10min</td><td class="mono">median time to first sell</td><td class="mono">median frac of initial sold</td><td class="mono">bought back</td></tr>
+      <tr><td class="mono"><a href="https://gmgn.ai/sol/address/bwamJzztZsepfkteWRChggmXuiiCQvpLqPietdNfSXa" target="_blank" rel="noopener">bwamJz…fSXa</a></td><td class="mono">10,174</td><td class="mono">22</td><td class="mono">21/22</td><td class="mono">0.1 min</td><td class="mono">1.0</td><td class="mono">0/22</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/DVhwSE98dHBtEGnQcYyAiEzE2XFjGnGwwuv9n1Ypnre9" target="_blank" rel="noopener">DVhwSE…nre9</a></td><td class="mono">5,824</td><td class="mono">13</td><td class="mono">13/13</td><td class="mono">0.7 min</td><td class="mono">1.0</td><td class="mono">0/13</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/9RrKUhRpbPDNxR7x88ZsCgdtqPHUfwYPjj4JdpV4FBj9" target="_blank" rel="noopener">9RrKUh…FBj9</a></td><td class="mono">4,912</td><td class="mono">13</td><td class="mono">11/13</td><td class="mono">0.5 min</td><td class="mono">1.0</td><td class="mono">1/13</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/4FEGV9upZPiRejpSu9FLgxuwcZLFY4HkizkN6EBQDAiU" target="_blank" rel="noopener">4FEGV9…DAiU</a></td><td class="mono">3,071</td><td class="mono">9</td><td class="mono">9/9</td><td class="mono">0.3 min</td><td class="mono">0.75</td><td class="mono">8/9</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/AWGAwNm53RTSjxPEqxiYwwhXjcjLnMVFrd4gYK2scQT6" target="_blank" rel="noopener">AWGAwN…cQT6</a></td><td class="mono">2,562</td><td class="mono">23</td><td class="mono">22/23</td><td class="mono">0.3 min</td><td class="mono">1.0</td><td class="mono">0/23</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/4UKLdTBiz6pGRccq9CGw9n53UwmAdd4UX1sJKeUohSiP" target="_blank" rel="noopener">4UKLdT…hSiP</a></td><td class="mono">2,438</td><td class="mono">10</td><td class="mono">10/10</td><td class="mono">0.6 min</td><td class="mono">1.0</td><td class="mono">3/10</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/B1cJJMstShf6oGhJ1bmBMK1XBjjr4n58kWHKYUNWygbL" target="_blank" rel="noopener">B1cJJM…ygbL</a></td><td class="mono">2,326</td><td class="mono">5</td><td class="mono">5/5</td><td class="mono">0.3 min</td><td class="mono">1.0</td><td class="mono">2/5</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/2Lt12W2ZUU6fcqkvbZTLBR6EHTRd16jhLBqBKqBZm5xo" target="_blank" rel="noopener">2Lt12W…m5xo</a></td><td class="mono">2,268</td><td class="mono">25</td><td class="mono">25/25</td><td class="mono">0.0 min</td><td class="mono">1.0</td><td class="mono">0/25</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/whamNNP9tHoxLg92yHvJPdYhghEoCg1qYTsh5a2oLbx" target="_blank" rel="noopener">whamNN…oLbx</a></td><td class="mono">2,032</td><td class="mono">16</td><td class="mono">15/16</td><td class="mono">0.0 min</td><td class="mono">0.05</td><td class="mono">0/16</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/5FqUo9aBjsp7QeeyN6Vi2ZmF2fjS4H5EU7wnAQwPy17z" target="_blank" rel="noopener">5FqUo9…y17z</a></td><td class="mono">1,988</td><td class="mono">16</td><td class="mono">16/16</td><td class="mono">0.1 min</td><td class="mono">0.312</td><td class="mono">1/16</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/2iC9HoFNhvC6Ems2rAhJjrBK92Y2onNhPWwU9yzAqejb" target="_blank" rel="noopener">2iC9Ho…qejb</a></td><td class="mono">1,943</td><td class="mono">11</td><td class="mono">11/11</td><td class="mono">0.5 min</td><td class="mono">0.08</td><td class="mono">1/11</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/8YcbyX92UHTU23HZv3ccP9o13qibErQkKaUjoxqxd7SJ" target="_blank" rel="noopener">8YcbyX…d7SJ</a></td><td class="mono">1,936</td><td class="mono">24</td><td class="mono">24/24</td><td class="mono">0.1 min</td><td class="mono">1.0</td><td class="mono">0/24</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/7ZV54HcwtzRhZSEPskT8ox5hn9yNocK9xpe4BQXoziaP" target="_blank" rel="noopener">7ZV54H…ziaP</a></td><td class="mono">1,723</td><td class="mono">14</td><td class="mono">14/14</td><td class="mono">0.1 min</td><td class="mono">0.75</td><td class="mono">0/14</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/29yFzeBZgxf5zqrAkKXwgZtQehRf4pL8WbV2nRJikbw8" target="_blank" rel="noopener">29yFze…kbw8</a></td><td class="mono">1,706</td><td class="mono">21</td><td class="mono">18/21</td><td class="mono">0.0 min</td><td class="mono">1.0</td><td class="mono">0/21</td></tr><tr><td class="mono"><a href="https://gmgn.ai/sol/address/Au8oJ2kqvRq61JjNLDgsSg2E5GYnXYW6txaSQ392RdcU" target="_blank" rel="noopener">Au8oJ2…RdcU</a></td><td class="mono">1,701</td><td class="mono">13</td><td class="mono">11/13</td><td class="mono">0.5 min</td><td class="mono">1.0</td><td class="mono">1/13</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">The one thing that held up out-of-sample</div>
+    <h2 class="sh">Dev history <span class="dim">persists.</span></h2>
+    <p class="sp">We split every prolific dev's launches chronologically — classified them only on
+    their early launches, measured only their later ones (7,412 devs,
+    167,723 later launches). Devs with at least one prior
+    graduation completed future launches at <strong>2.139%</strong> vs
+    <strong>0.307%</strong> for devs who had never graduated anything —
+    and the gap <em>widens</em> when the big farms are excluded. Past KOL performance didn't survive
+    this same test. Dev history did.</p>
+    <p class="sp">Honest limits: graduation measures completion, not your PnL — and a dev can buy
+    their own graduation. Whether good-dev tokens pay <em>buyers</em> better is still accruing data
+    (directional, underpowered so far). We publish that either way when it resolves.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Method</div>
+    <p class="sp">Creator = the wallet signing the create transaction on our live event stream
+    (mis-parsed feed rows are filtered and the filter is regression-tested). Graduation = bonding-curve
+    completion (migration event). Sell/buyback timing from on-chain wallet activity, sampled over each
+    wallet's recent window. Full method on the <a href="/methodology" class="nav-link" style="display:inline;padding:0">methodology page</a>.</p>
+  </div>
+</section>
+
+<div class="wrap"><footer>
+  <div>
+    <div class="fmark">Alpha<span class="lum">lumina</span></div>
+    <p class="ft-note">The validation layer for meme-coin momentum. Research and measurement — not financial advice, not a trading bot, not an alert cannon.</p>
+  </div>
+  <div style="text-align:right">
+    <p class="ft-meta">alphalumina.com · © 2026</p>
+    <div class="ft-links">
+      <a href="/how-it-works" class="nav-link" style="font-size:11px">How It Works</a>
+      <a href="/methodology" class="nav-link" style="font-size:11px">Methodology</a>
+      <a href="/receipts" class="nav-link" style="font-size:11px">Receipts</a>
+      <a href="/brief" class="nav-link" style="font-size:11px">Brief</a>
+      <a href="/board" class="nav-link" style="font-size:11px">Board</a>
+      <a href="/devs" class="nav-link" style="font-size:11px">Devs</a>
+      <a href="/faq" class="nav-link" style="font-size:11px">FAQ</a>
+      <a href="/legal" class="nav-link" style="font-size:11px">Legal &amp; Risk</a>
+    </div>
+  </div>
+</footer></div>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
