@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance Board — Alphalumina</title>
+<meta name="description" content="Day, week, and month performance of every token in Alphalumina's tracked universe — peak, realized, drawdown, and the losers column no highlight reel publishes.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.btable{width:100%;border-collapse:collapse;margin-top:22px;font-size:13px}
+.btable td{padding:11px 12px;border-bottom:1px solid var(--border);font-weight:300;color:var(--fg2)}
+.btable td:first-child{color:var(--fg);font-weight:600}
+.btable .mono{font-family:var(--mono);font-size:11.5px}
+.btable .pos{color:#4fde78} .btable .neg{color:#ef8888}
+.btable .quiet{color:var(--fg2);font-style:italic}
+.btable a{color:#4ca3e0;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Alpha<span class="lum">lumina</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/how-it-works" class="nav-link">How It Works</a>
+    <a href="/methodology" class="nav-link">Methodology</a>
+    <a href="/receipts" class="nav-link">Receipts</a>
+    <a href="/brief" class="nav-link">Brief</a>
+    <a href="/board" class="nav-link active">Board</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="/early-access" class="nav-cta">Early Access</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="stag">Performance Board · full universe</div>
+    <h1>Winners <span class="dim">and losers. Same table.</span></h1>
+    <p class="sp">Every token our engine tracked, measured from the moment it was first flagged — peak, 24h, and worst drawdown together. "Peak" is a checkpoint proxy (best logged window, not the tick high). Highlight reels show you their winners; a measurement layer shows you the whole distribution. Nothing here is financial advice.</p>
+    <p class="brief-meta" style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg2);margin-top:10px">generated 2026-07-06 03:05 UTC · entry = first flag in window · dead = −85% at 24h</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Trailing 24 hours</div>
+    <h2 class="sh">12 tokens resolved<span class="dim"> · 0.0% dead · median peak -12.1%</span></h2>
+    <p class="sp">Top by peak (checkpoint proxy). 0 more flagged but too fresh to grade.</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td class="mono" style="font-weight:600">token</td><td class="mono">first flagged (UTC)</td><td class="mono">peak</td><td class="mono">24h</td><td class="mono">worst</td><td class="mono">dead</td><td class="mono">chart</td></tr>
+      <tr><td>$DAISY</td><td class="mono">2026-07-05T17:15</td><td class="mono pos">+106.2%</td><td class="mono">—</td><td class="mono neg">-21.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/FMEm7Pu7sbtsjuEtZu4SAUSCe5NViLkUSbrThCxEpump" target="_blank" rel="noopener">FMEm7P…</a></td></tr><tr><td>$Richard</td><td class="mono">2026-07-05T13:48</td><td class="mono pos">+74.2%</td><td class="mono">—</td><td class="mono pos">+54.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/3SHBdvwb953JpAuFDE8rssJABFwPV88a9Kn5q6kepump" target="_blank" rel="noopener">3SHBdv…</a></td></tr><tr><td>$JOKO</td><td class="mono">2026-07-05T00:57</td><td class="mono pos">+51.6%</td><td class="mono neg">-80.8%</td><td class="mono neg">-80.8%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/7GhD87DKx5UeF2d4K3aLACPmkX94uzpAqrnYQqfCpump" target="_blank" rel="noopener">7GhD87…</a></td></tr><tr><td>$zwazu</td><td class="mono">2026-07-05T17:26</td><td class="mono pos">+11.7%</td><td class="mono">—</td><td class="mono neg">-16.2%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/F7KTr1kw1ZnqJ3dgdviU56HRwqi1UwC1py1kcdG4pump" target="_blank" rel="noopener">F7KTr1…</a></td></tr><tr><td>$TCAR</td><td class="mono">2026-07-05T17:48</td><td class="mono neg">-1.8%</td><td class="mono">—</td><td class="mono neg">-56.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/3gDAjymqTF19GVw4TcB8sAKd3yLR2dfEzJ4Wztm2pump" target="_blank" rel="noopener">3gDAjy…</a></td></tr><tr><td>$SIRIUS</td><td class="mono">2026-07-05T19:15</td><td class="mono neg">-12.1%</td><td class="mono">—</td><td class="mono neg">-82.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/A8xpxDE1mpF8bT4UPSJNFVfcsjSXc4EoVLLFpZ8gpump" target="_blank" rel="noopener">A8xpxD…</a></td></tr><tr><td>$ChiggaButt</td><td class="mono">2026-07-05T19:47</td><td class="mono neg">-22.8%</td><td class="mono">—</td><td class="mono neg">-66.8%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/6mQxhongiS8eoJqTZAT2BmGjgfkpmihhXpZGDxuapump" target="_blank" rel="noopener">6mQxho…</a></td></tr><tr><td>$Tsukune</td><td class="mono">2026-07-05T17:04</td><td class="mono neg">-28.5%</td><td class="mono">—</td><td class="mono neg">-92.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/AfjrmgECAw9asQN5UESnDZPYghe4GCc7qcTvcp6xpump" target="_blank" rel="noopener">Afjrmg…</a></td></tr><tr><td>$Bulliccini</td><td class="mono">2026-07-05T21:47</td><td class="mono neg">-39.4%</td><td class="mono">—</td><td class="mono neg">-49.5%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/ENRjTeWd7gqfpb3YYR4hrQ66rnUzm1kwGM8prz4pump" target="_blank" rel="noopener">ENRjTe…</a></td></tr><tr><td>$BullWorld</td><td class="mono">2026-07-05T03:17</td><td class="mono neg">-51.3%</td><td class="mono">—</td><td class="mono neg">-67.6%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/ChJqQSFK1JUPCaoGrtKM1Nm5k29ZdbHQ8kiVNuhppump" target="_blank" rel="noopener">ChJqQS…</a></td></tr>
+    </table></div>
+    <p class="sp" style="margin-top:18px"><strong>Same universe, worst first</strong> — the column every leaderboard leaves out:</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td>$Bulldeng</td><td class="mono">2026-07-05T18:09</td><td class="mono neg">-79.1%</td><td class="mono">—</td><td class="mono neg">-93.6%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/BDcrxFLTc4xGFp4yJJ8nosZh8YcQjcPNpi9SWg2kpump" target="_blank" rel="noopener">BDcrxF…</a></td></tr><tr><td>$SERUM</td><td class="mono">2026-07-06T00:55</td><td class="mono neg">-87.9%</td><td class="mono">—</td><td class="mono neg">-92.8%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/BQsYkirAQCAJjCUsF77T1CPGhU67fucf7Mce23r8SRUM" target="_blank" rel="noopener">BQsYki…</a></td></tr><tr><td>$Tsukune</td><td class="mono">2026-07-05T17:04</td><td class="mono neg">-28.5%</td><td class="mono">—</td><td class="mono neg">-92.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/AfjrmgECAw9asQN5UESnDZPYghe4GCc7qcTvcp6xpump" target="_blank" rel="noopener">Afjrmg…</a></td></tr><tr><td>$SIRIUS</td><td class="mono">2026-07-05T19:15</td><td class="mono neg">-12.1%</td><td class="mono">—</td><td class="mono neg">-82.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/A8xpxDE1mpF8bT4UPSJNFVfcsjSXc4EoVLLFpZ8gpump" target="_blank" rel="noopener">A8xpxD…</a></td></tr><tr><td>$JOKO</td><td class="mono">2026-07-05T00:57</td><td class="mono pos">+51.6%</td><td class="mono neg">-80.8%</td><td class="mono neg">-80.8%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/7GhD87DKx5UeF2d4K3aLACPmkX94uzpAqrnYQqfCpump" target="_blank" rel="noopener">7GhD87…</a></td></tr>
+    </table></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Trailing 7 days</div>
+    <h2 class="sh">78 tokens resolved<span class="dim"> · 38.5% dead · median peak -8.5%</span></h2>
+    <p class="sp">Top by peak (checkpoint proxy). 0 more flagged but too fresh to grade.</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td class="mono" style="font-weight:600">token</td><td class="mono">first flagged (UTC)</td><td class="mono">peak</td><td class="mono">24h</td><td class="mono">worst</td><td class="mono">dead</td><td class="mono">chart</td></tr>
+      <tr><td>$Bullshit</td><td class="mono">2026-06-29T02:25</td><td class="mono pos">+990.9%</td><td class="mono pos">+346.6%</td><td class="mono pos">+79.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/9qeN746oRit785W9xs69XR4Tzm2i4vjaxUikNYYFpump" target="_blank" rel="noopener">9qeN74…</a></td></tr><tr><td>$Horseradish</td><td class="mono">2026-07-01T00:30</td><td class="mono pos">+656.6%</td><td class="mono pos">+275.0%</td><td class="mono pos">+33.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/GAefbsZef5zGjacXf65ioie8gzHEnS9xzSWNZsxFpump" target="_blank" rel="noopener">GAefbs…</a></td></tr><tr><td>$womanlet</td><td class="mono">2026-07-04T13:12</td><td class="mono pos">+189.3%</td><td class="mono neg">-69.2%</td><td class="mono neg">-69.2%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/4EKJBc4WdeCViLRCfRx5ieFHfPFuBYhV49527GUBpump" target="_blank" rel="noopener">4EKJBc…</a></td></tr><tr><td>$drugcoin</td><td class="mono">2026-06-30T07:09</td><td class="mono pos">+117.8%</td><td class="mono neg">-65.1%</td><td class="mono neg">-65.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/GscmTqLAqHzV6oU4BamYN3mWdnoc59icutwSxoQapump" target="_blank" rel="noopener">GscmTq…</a></td></tr><tr><td>$DAISY</td><td class="mono">2026-07-05T17:15</td><td class="mono pos">+106.2%</td><td class="mono">—</td><td class="mono neg">-21.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/FMEm7Pu7sbtsjuEtZu4SAUSCe5NViLkUSbrThCxEpump" target="_blank" rel="noopener">FMEm7P…</a></td></tr><tr><td>$BlackPepe</td><td class="mono">2026-07-03T19:41</td><td class="mono pos">+99.5%</td><td class="mono neg">-84.9%</td><td class="mono neg">-84.9%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/H31SbPSTDRiGrJDagXYn2SAjmhFaogNPUYhhQ3GVpump" target="_blank" rel="noopener">H31SbP…</a></td></tr><tr><td>$Polymatch</td><td class="mono">2026-07-02T18:48</td><td class="mono pos">+90.6%</td><td class="mono neg">-85.6%</td><td class="mono neg">-85.6%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/8EvNDHP4zETTgK52jDq3JXMjUfQZpnqSD4h4pDhZpump" target="_blank" rel="noopener">8EvNDH…</a></td></tr><tr><td>$MOO</td><td class="mono">2026-06-29T09:53</td><td class="mono pos">+88.8%</td><td class="mono neg">-83.4%</td><td class="mono neg">-83.4%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/2qviVzJF1CG7yU9nwoz4Jmg79PFQxHm25x1ddwC6pump" target="_blank" rel="noopener">2qviVz…</a></td></tr><tr><td>$NUGGET</td><td class="mono">2026-07-03T02:16</td><td class="mono pos">+87.2%</td><td class="mono neg">-93.9%</td><td class="mono neg">-93.9%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/2M4pzjZ2SLo3Tvt4iQkr9geeov1wrVNioxCr99gKpump" target="_blank" rel="noopener">2M4pzj…</a></td></tr><tr><td>$MOMO</td><td class="mono">2026-07-03T03:42</td><td class="mono pos">+80.2%</td><td class="mono neg">-76.9%</td><td class="mono neg">-76.9%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/CwjEEWiiMWvNweSJMtT67JLmgo34drNXPdLUgWwSpump" target="_blank" rel="noopener">CwjEEW…</a></td></tr>
+    </table></div>
+    <p class="sp" style="margin-top:18px"><strong>Same universe, worst first</strong> — the column every leaderboard leaves out:</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td>$KALEO</td><td class="mono">2026-07-02T09:21</td><td class="mono pos">+36.3%</td><td class="mono neg">-99.4%</td><td class="mono neg">-99.4%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/68HiocxMqZviFd2pAciSPYxTXwEJHoeEVn6qe3qpump" target="_blank" rel="noopener">68Hioc…</a></td></tr><tr><td>$CHILLBRO</td><td class="mono">2026-07-02T04:40</td><td class="mono neg">-36.6%</td><td class="mono neg">-99.1%</td><td class="mono neg">-99.1%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/F12gpd6JRrBnuEzhBfsTamTq5QPnNaHEcsefQ8N3pump" target="_blank" rel="noopener">F12gpd…</a></td></tr><tr><td>$MOONSEM</td><td class="mono">2026-07-01T05:33</td><td class="mono neg">-98.3%</td><td class="mono neg">-98.5%</td><td class="mono neg">-98.5%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/BZMEsERcPEgQLNiUgQPNTRX3SxMWhYzG1bhZGffrpump" target="_blank" rel="noopener">BZMEsE…</a></td></tr><tr><td>$Ritz</td><td class="mono">2026-07-02T10:23</td><td class="mono neg">-46.2%</td><td class="mono neg">-98.1%</td><td class="mono neg">-98.1%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/pND1zZSEigwhsJ9ikhrEbsnB1iD8PZU4vcEZ8kYpump" target="_blank" rel="noopener">pND1zZ…</a></td></tr><tr><td>$VOTE</td><td class="mono">2026-06-29T16:12</td><td class="mono neg">-32.4%</td><td class="mono neg">-97.9%</td><td class="mono neg">-97.9%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/9SxjtCPJVU8nDjCYJHGDKYqUMQCwnrY9gRWdsa22pump" target="_blank" rel="noopener">9SxjtC…</a></td></tr>
+    </table></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Trailing 30 days</div>
+    <h2 class="sh">401 tokens resolved<span class="dim"> · 45.4% dead · median peak 1.3%</span></h2>
+    <p class="sp">Top by peak (checkpoint proxy). 0 more flagged but too fresh to grade · 3 excluded as data artifacts.</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td class="mono" style="font-weight:600">token</td><td class="mono">first flagged (UTC)</td><td class="mono">peak</td><td class="mono">24h</td><td class="mono">worst</td><td class="mono">dead</td><td class="mono">chart</td></tr>
+      <tr><td>$滑る猫</td><td class="mono">2026-06-17T10:30</td><td class="mono pos">+1338.1%</td><td class="mono pos">+758.4%</td><td class="mono neg">-52.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/3oX9emrqYRGzFEDPP3jA6tYnUBML4QSr3DfgD2r5pump" target="_blank" rel="noopener">3oX9em…</a></td></tr><tr><td>$SOCCER</td><td class="mono">2026-06-13T01:47</td><td class="mono pos">+1005.5%</td><td class="mono pos">+1005.5%</td><td class="mono pos">+120.4%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/FFosggieyf6ceEdapfQjeWetyFr9CjUzm9BLoxbopump" target="_blank" rel="noopener">FFosgg…</a></td></tr><tr><td>$Bullshit</td><td class="mono">2026-06-29T02:25</td><td class="mono pos">+990.9%</td><td class="mono pos">+346.6%</td><td class="mono pos">+79.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/9qeN746oRit785W9xs69XR4Tzm2i4vjaxUikNYYFpump" target="_blank" rel="noopener">9qeN74…</a></td></tr><tr><td>$piss</td><td class="mono">2026-06-26T01:42</td><td class="mono pos">+907.3%</td><td class="mono pos">+558.4%</td><td class="mono pos">+39.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/DXXcq4tY5e4PbXybyBMnxZjHVmzv1GVrAXoW5TcC5kbu" target="_blank" rel="noopener">DXXcq4…</a></td></tr><tr><td>$BADGER</td><td class="mono">2026-06-06T09:15</td><td class="mono pos">+772.4%</td><td class="mono">—</td><td class="mono pos">+346.8%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/22Agmy6eLSzfUNsfLaRHAVtyPjYiNC24L4PtZeEXt434" target="_blank" rel="noopener">22Agmy…</a></td></tr><tr><td>$Orbit</td><td class="mono">2026-06-20T15:26</td><td class="mono pos">+768.2%</td><td class="mono neg">-54.4%</td><td class="mono neg">-88.3%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/7gnDEtpjuqi2EGN4WvcGED1RY1eKzhAApmhcdgiqpump" target="_blank" rel="noopener">7gnDEt…</a></td></tr><tr><td>$Bami</td><td class="mono">2026-06-06T10:38</td><td class="mono pos">+709.7%</td><td class="mono">—</td><td class="mono pos">+277.7%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/ErjQwnppzTWW91a6uDJqP8zBeEzQ8vhRD5wtAisE3cnz" target="_blank" rel="noopener">ErjQwn…</a></td></tr><tr><td>$EC43</td><td class="mono">2026-06-24T03:46</td><td class="mono pos">+698.8%</td><td class="mono neg">-73.7%</td><td class="mono neg">-92.2%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/8JdjmcF8JQLPpbaiiyS6xhd5fYT2GLeNygTq8Twppump" target="_blank" rel="noopener">8Jdjmc…</a></td></tr><tr><td>$Islands</td><td class="mono">2026-06-12T21:39</td><td class="mono pos">+690.6%</td><td class="mono pos">+690.6%</td><td class="mono neg">-60.6%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/yoA2CoHk6HRNtFuTP1kVt5xkcvG7mr5raQ5zuNxpump" target="_blank" rel="noopener">yoA2Co…</a></td></tr><tr><td>$Horseradish</td><td class="mono">2026-07-01T00:30</td><td class="mono pos">+656.6%</td><td class="mono pos">+275.0%</td><td class="mono pos">+33.1%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/GAefbsZef5zGjacXf65ioie8gzHEnS9xzSWNZsxFpump" target="_blank" rel="noopener">GAefbs…</a></td></tr>
+    </table></div>
+    <p class="sp" style="margin-top:18px"><strong>Same universe, worst first</strong> — the column every leaderboard leaves out:</p>
+    <div class="table-scroll"><table class="btable">
+      <tr><td>$CUCK</td><td class="mono">2026-06-24T20:55</td><td class="mono pos">+111.6%</td><td class="mono neg">-87.6%</td><td class="mono neg">-100.0%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/25vej2BvAyitbH2nLq4m9BTnvDp5ygMDJJZWpUWNpump" target="_blank" rel="noopener">25vej2…</a></td></tr><tr><td>$retirement</td><td class="mono">2026-06-18T16:10</td><td class="mono neg">-98.7%</td><td class="mono neg">-98.9%</td><td class="mono neg">-100.0%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/27doQmgqRpCjNLAASo82NxpkRCrc44h3WafoXZj1pump" target="_blank" rel="noopener">27doQm…</a></td></tr><tr><td>$ARFUR</td><td class="mono">2026-06-19T02:20</td><td class="mono pos">+11.2%</td><td class="mono pos">+11.2%</td><td class="mono neg">-100.0%</td><td class="mono"></td><td class="mono"><a href="https://gmgn.ai/sol/token/2NqZkiNJcczyU6aAjwfobray3ovc2bPt5RPM2yrtR6q3" target="_blank" rel="noopener">2NqZki…</a></td></tr><tr><td>$FOMO</td><td class="mono">2026-06-19T02:41</td><td class="mono neg">-79.5%</td><td class="mono neg">-90.3%</td><td class="mono neg">-100.0%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/2SGbksug7gfx5iPCyRJ255ZXEcyu97TzdxqAdM2dpump" target="_blank" rel="noopener">2SGbks…</a></td></tr><tr><td>$PIXL</td><td class="mono">2026-06-15T19:08</td><td class="mono neg">-12.8%</td><td class="mono neg">-100.0%</td><td class="mono neg">-100.0%</td><td class="mono">💀</td><td class="mono"><a href="https://gmgn.ai/sol/token/2XHjsCWwWj3s3e1KokLmCH4BSFkoD627t1v9PchBpump" target="_blank" rel="noopener">2XHjsC…</a></td></tr>
+    </table></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="stag">Read this before quoting it</div>
+    <p class="sp">Medians and death rates are the real story: most flagged tokens go nowhere, which is exactly why we publish base rates instead of highlight reels. Full method on the <a href="/methodology" class="nav-link" style="display:inline;padding:0">methodology page</a>.</p>
+  </div>
+</section>
+
+<div class="wrap"><footer>
+  <div>
+    <div class="fmark">Alpha<span class="lum">lumina</span></div>
+    <p class="ft-note">The validation layer for meme-coin momentum. Research and measurement — not financial advice, not a trading bot, not an alert cannon.</p>
+  </div>
+  <div style="text-align:right">
+    <p class="ft-meta">alphalumina.com · © 2026</p>
+    <div class="ft-links">
+      <a href="/how-it-works" class="nav-link" style="font-size:11px">How It Works</a>
+      <a href="/methodology" class="nav-link" style="font-size:11px">Methodology</a>
+      <a href="/receipts" class="nav-link" style="font-size:11px">Receipts</a>
+      <a href="/brief" class="nav-link" style="font-size:11px">Brief</a>
+      <a href="/board" class="nav-link" style="font-size:11px">Board</a>
+      <a href="/faq" class="nav-link" style="font-size:11px">FAQ</a>
+      <a href="/legal" class="nav-link" style="font-size:11px">Legal &amp; Risk</a>
+    </div>
+  </div>
+</footer></div>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
