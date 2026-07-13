@@ -655,8 +655,9 @@ function drawRings(g){const{cx,cy,R}=g;RINGS.forEach((f,i)=>{const r=R*f;
 ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.strokeStyle=rgba(GOLD,.10);ctx.lineWidth=.8;ctx.stroke();
 const sa=angle*(.2+i*.06)*(i%2?-1:1);
 ctx.beginPath();ctx.arc(cx,cy,r,sa,sa+.9);ctx.strokeStyle=rgba(i%2?TEAL:GOLD,.32);ctx.lineWidth=1;ctx.stroke();
-ctx.font='500 8.5px "DM Mono",monospace';ctx.textAlign='left';ctx.fillStyle=rgba(WHITE,.32);
-ctx.fillText(LABELS[i],cx+r*.707+6,cy-r*.707-6)})}
+ctx.font='500 8.5px "DM Mono",monospace';ctx.fillStyle=rgba(WHITE,.32);
+if(i%2){ctx.textAlign='right';ctx.fillText(LABELS[i],cx-r*.707-6,cy-r*.707-6)}
+else{ctx.textAlign='left';ctx.fillText(LABELS[i],cx+r*.707+6,cy-r*.707-6)}})}
 function step(g){const{cx,cy,R,coreR}=g;
 for(let i=packets.length-1;i>=0;i--){const p=packets[i];p.life++;
 if(p.state==='in'){p.r-=p.speed*(REDUCE?0:1);p.a+=p.drift;
