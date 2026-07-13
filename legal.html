@@ -3,21 +3,29 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Legal &amp; Risk — Alphalumina</title>
-<meta name="description" content="Full risk disclosure, terms of use, and privacy policy for Alphalumina — including a plain-language explanation of how meme-coin markets actually work and every way you can lose money in them.">
+<meta name="description" content="Complete risk disclosure, terms of use, and privacy policy for Alphalumina — a plain-language explanation of how meme-coin markets work, every major way you can lose money in them, and the limits of our own research methods.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-.toc{background:var(--glass);border:1px solid var(--border);padding:18px 22px;margin:26px 0}
-.toc a{color:#4ca3e0;text-decoration:none;display:block;padding:3px 0;font-size:13.5px}
+.toc{background:var(--glass);border:1px solid var(--border);padding:20px 24px;margin:26px 0}
+.toc-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+.toc a{color:#4ca3e0;text-decoration:none;display:block;padding:4px 0;font-size:13.5px}
+.toc a:hover{color:var(--fg)}
+.toc .toc-h{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);margin-bottom:8px}
 .callout{border-left:3px solid #ef8888;background:var(--glass);padding:16px 20px;margin:22px 0}
 .callout.gold{border-left-color:#d8b45a}
-.prose h2{margin-top:52px}
-.prose h3{margin-top:30px}
+.bigwarn{border:1px solid #ef8888;background:rgba(239,136,136,.06);padding:22px 26px;margin:30px 0;text-align:center}
+.bigwarn .bw-t{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ef8888}
+.bigwarn p{margin:10px 0 0;color:var(--fg);font-size:16px;font-weight:600}
+.prose h2{margin-top:56px;scroll-margin-top:90px}
+.prose h3{margin-top:30px;scroll-margin-top:90px}
 .prose table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px}
 .prose table td,.prose table th{padding:9px 12px;border-bottom:1px solid var(--border);text-align:left;font-weight:300;color:var(--fg2)}
 .prose table th{color:var(--fg);font-weight:600;font-size:12px}
+.backtop{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4ca3e0;text-decoration:none;margin-top:14px}
+@media(max-width:720px){.toc-cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -41,38 +49,53 @@
   </div>
 </nav>
 
-<header class="page-head">
+<header class="page-head" id="top">
   <div class="wrap">
     <div class="stag">Legal &amp; Risk</div>
     <h1>Read this before <span class="dim">you do anything else.</span></h1>
-    <p class="sp">Most risk pages are boilerplate written to be skipped. This one is written to be read.
-    It explains, in plain language, what this platform is, how meme-coin markets actually work
-    mechanically, every major way people lose money in them, and what we do with your data.
-    If you only read one page on this site, make it this one.</p>
-    <p class="sp updated">Last updated: 2026-07-13</p>
+    <p class="sp">Most risk pages are boilerplate written to be skipped. This one is written to be
+    read. It explains, in plain language, what this platform is, how meme-coin markets actually
+    work, every major way people lose money in them — including the failure modes of research
+    methods like ours — and exactly what we do with your data.</p>
+    <p class="sp updated">Effective date: 2026-07-02 · Last updated: 2026-07-13</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap"><div class="prose">
 
-    <div class="toc">
-      <a href="#getting-into">1. What you are getting into</a>
-      <a href="#how-memecoins-work">2. How meme-coin markets actually work</a>
-      <a href="#how-service-works">3. What Alphalumina is — and what it is not</a>
-      <a href="#risk">4. Full risk disclosure</a>
-      <a href="#terms">5. Terms of Use</a>
-      <a href="#privacy">6. Privacy Policy</a>
+    <div class="bigwarn" role="alert">
+      <div class="bw-t">Capital warning</div>
+      <p>Meme-coin trading can result in the loss of ALL funds involved — quickly, permanently,
+      and with no recourse. Never use money you cannot afford to lose entirely.</p>
+    </div>
+
+    <div class="toc" aria-label="Table of contents">
+      <div class="toc-h">On this page</div>
+      <div class="toc-cols">
+        <div>
+          <a href="#getting-into">1. What you are getting into</a>
+          <a href="#how-memecoins-work">2. How meme-coin markets work</a>
+          <a href="#how-service-works">3. What Alphalumina is — and is not</a>
+          <a href="#risk">4. Market &amp; asset risks</a>
+          <a href="#execution">5. Execution &amp; tradeability risks</a>
+        </div>
+        <div>
+          <a href="#research">6. Research-method &amp; AI risks</a>
+          <a href="#data">7. Data, third-party &amp; platform risks</a>
+          <a href="#terms">8. Terms of Use</a>
+          <a href="#privacy">9. Privacy Policy</a>
+          <a href="#contact">10. Contact</a>
+        </div>
+      </div>
     </div>
 
     <h2 id="getting-into">1. What you are getting into</h2>
     <p>Alphalumina measures the meme-coin market on Solana — primarily tokens launched on
     pump.fun and similar launchpads. If you use this platform, you are looking at data about
-    <b style="color:var(--fg)">one of the highest-risk, most manipulated, least regulated markets that has ever
-    existed.</b> That is not marketing language. It is the literal, measurable truth, and our
-    own numbers below prove it.</p>
-    <p>Here is what our reconstructed data actually shows (methodology on the
-    <a href="/methodology">methodology page</a>; every number carries its sample size):</p>
+    <b style="color:var(--fg)">one of the highest-risk, most manipulated, least regulated markets that has
+    ever existed.</b> That is not marketing language. It is the literal, measurable truth, and our
+    own numbers prove it:</p>
     <table>
       <tr><th>Measured fact</th><th>Value</th><th>Sample</th></tr>
       <tr><td>New tokens that die shortly after launch</td><td>~85%</td><td>ongoing launch stream</td></tr>
@@ -80,55 +103,56 @@
       <tr><td>Tokens that reached $100K market cap and round-tripped anyway</td><td>63%</td><td>same cohort</td></tr>
       <tr><td>Median peak multiple after trending</td><td>1.68x</td><td>same cohort</td></tr>
       <tr><td>Median value remaining after the peak</td><td>~41% of entry</td><td>same cohort</td></tr>
-      <tr><td>Tagged "KOL / smart money" wallets that are net-negative on realized trades</td><td>the majority — see <a href="/kols">/kols</a></td><td>on-chain, realized flows</td></tr>
+      <tr><td>Tagged "KOL / smart money" wallets net-negative on realized trades</td><td>the majority — see <a href="/kols">/kols</a></td><td>on-chain, realized flows</td></tr>
     </table>
     <div class="callout">
-      <p><b style="color:var(--fg)">The single most important sentence on this site:</b> reaching a milestone is not
-      the same as being tradeable. Most tokens that "succeed" by any headline metric — trending,
-      graduating, hitting $100K — still end up round-tripping. If you hold through the peak, the
+      <p><b style="color:var(--fg)">The single most important sentence on this site:</b> reaching a milestone
+      is not the same as being tradeable. Most tokens that "succeed" by any headline metric —
+      trending, graduating, hitting $100K — still round-trip. If you hold through the peak, the
       median outcome in our data is losing more than half your entry value. The people who make
       money in this market are overwhelmingly the ones who sell into strength, not the ones who
       believe.</p>
     </div>
     <p>If reading that table makes you want to close this tab — that is a rational response. We
-    built this platform because these numbers are systematically hidden by tools that make money
-    from your excitement. We make nothing from your trades. We do not want you to trade at all
-    unless you fully understand what follows.</p>
+    built this platform because these numbers are systematically hidden by tools that profit from
+    your excitement. We make nothing from your trades. We do not want you to trade at all unless
+    you fully understand everything below.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
 
     <h2 id="how-memecoins-work">2. How meme-coin markets actually work</h2>
-    <p>You cannot judge risk in a market you do not understand mechanically. Here is the machinery,
-    stripped of jargon.</p>
+    <p>You cannot judge risk in a market you do not understand mechanically. Here is the
+    machinery, stripped of jargon.</p>
 
     <h3>2.1 The launch: bonding curves</h3>
-    <p>On pump.fun, anyone can create a token in seconds for a few dollars. There is no team, no
-    product, no vetting. The token starts on a <b style="color:var(--fg)">bonding curve</b> — a smart contract
-    that acts as an automatic market maker: the price rises as people buy from the curve and falls
-    as they sell back to it. Early buyers get the lowest prices by construction, which is exactly
-    why launches attract automated snipers (bots that buy in the same block the token is created —
-    faster than any human can).</p>
+    <p>On pump.fun, anyone can create a token in seconds for a few dollars. No team, no product,
+    no vetting. The token starts on a <b style="color:var(--fg)">bonding curve</b> — a smart contract that
+    acts as an automatic market maker: price rises as people buy from the curve, falls as they
+    sell back. Early buyers get the lowest prices by construction, which is exactly why launches
+    attract automated snipers (bots that buy in the same block the token is created — faster than
+    any human can).</p>
 
     <h3>2.2 Graduation</h3>
     <p>When enough money has bought into the curve (roughly a $69K market cap), the token
     "graduates": its liquidity migrates to a public decentralized exchange. Graduation is often
-    sold as an achievement. Our data says it is not an outcome —
-    <b style="color:var(--fg)">in our current lifecycle cohort, not one observed graduation has gone on to reach
-    $100K yet</b>, and across the broader reconstructed cohort most graduates still round-tripped.
-    Graduation means the game changes venue. It does not mean the token "made it."</p>
+    sold as an achievement. Our data says it is not an outcome — in our current lifecycle cohort,
+    <b style="color:var(--fg)">not one observed graduation has gone on to reach $100K yet</b>, and across the
+    broader reconstructed cohort most graduates still round-tripped. Graduation changes the venue.
+    It does not mean the token "made it."</p>
 
-    <h3>2.3 Liquidity — the number that decides whether you can actually exit</h3>
+    <h3>2.3 Liquidity — the number that decides whether you can exit</h3>
     <p>Market cap is a headline; <b style="color:var(--fg)">liquidity is the truth.</b> A token can display a
-    $500K market cap with only $15K of real liquidity in the pool. That means the paper value
-    mostly cannot be realized: if you (or anyone) sell into thin liquidity, the price collapses
-    beneath you as you exit. Every major loss pattern in this market is some version of "the
-    market cap was a mirage; the liquidity was never there." When liquidity is pulled entirely,
-    that is a <b style="color:var(--fg)">rug pull</b> — the token instantly becomes worthless, and there is no
-    recourse, no support line, no regulator to complain to.</p>
+    $500K market cap with only $15K of real liquidity in the pool — the paper value mostly cannot
+    be realized. If you sell into thin liquidity, the price collapses beneath you as you exit.
+    Every major loss pattern in this market is a version of "the market cap was a mirage; the
+    liquidity was never there." When liquidity is withdrawn entirely, that is a
+    <b style="color:var(--fg)">rug pull</b> — the token becomes worthless instantly, with no recourse, no
+    support line, no regulator to complain to.</p>
 
     <h3>2.4 The people on the other side of your trade</h3>
-    <p>Meme-coin trading is adversarial. When you buy, someone sells to you. Understand who they
+    <p>Meme-coin trading is adversarial. When you buy, someone sells to you. Know who they
     typically are:</p>
     <ul>
-      <li><b style="color:var(--fg)">Developers ("devs").</b> The wallet that created the token. Many devs sell
+      <li><b style="color:var(--fg)">Developers ("devs").</b> The wallet that created the token. Many sell
       their allocation into the first wave of buying — some launch dozens of tokens per day purely
       to farm this. Some do "buybacks" as theater to restart the pump. A small minority have real
       track records; our <a href="/devs">dev page</a> measures them, because dev history is the
@@ -137,30 +161,30 @@
       large early position across many wallets to disguise concentration (bundlers). When you see
       "500 holders," a meaningful fraction can be one operator wearing 50 masks.</li>
       <li><b style="color:var(--fg)">Volume bots and wash traders.</b> A large share of displayed volume is
-      circular — the same money passing between related wallets to make the token look alive and
+      circular — the same money passing between related wallets to make a token look alive and to
       trigger trending algorithms. Raw "24h volume" is one of the least trustworthy numbers on any
       screener, including ours until our volume-quality model says otherwise.</li>
-      <li><b style="color:var(--fg)">KOLs and influencers.</b> Accounts paid (openly or not) to post a token, or
-      trading their own bags into the attention they create. Our measured data shows the wallets
-      publicly tagged as top KOLs mostly hold for <em>about a minute</em> — they scalp the buying
-      pressure their own posts generate. Their callers are their exit liquidity. Also note: we can
-      only measure wallets publicly linked to a KOL; many trade from undisclosed side wallets that
-      nobody can see, so even honest KOL leaderboards — including ours — are incomplete by
-      construction.</li>
-      <li><b style="color:var(--fg)">Clone farms.</b> Within minutes of any narrative (a news event, a celebrity
-      post), dozens of near-identical tokens launch with the same name. At most one becomes "the
-      real one." Buying the wrong clone is a total loss that looks identical to buying the right
-      one for the first several minutes.</li>
+      <li><b style="color:var(--fg)">KOLs and influencers.</b> Accounts paid (openly or not) to post a token,
+      or trading their own bags into the attention they create. Our measured data shows the
+      wallets publicly tagged as top KOLs mostly hold for <em>about a minute</em> — they scalp the
+      buying pressure their own posts generate. Their followers are their exit liquidity.</li>
+      <li><b style="color:var(--fg)">Clone farms and fake symbols.</b> Within minutes of any narrative — a news
+      event, a celebrity post — dozens of near-identical tokens launch with the same name and
+      ticker. At most one becomes "the real one." Buying the wrong clone is a total loss that
+      looks identical to buying the right one for the first several minutes. Impersonation extends
+      to fake project accounts, fake exchange listings, and fake "official" contract addresses
+      posted in hijacked comment sections.</li>
     </ul>
 
     <h3>2.5 The lifecycle most tokens actually follow</h3>
     <p>Launch → a few minutes of sniper and bot activity → either immediate death (the vast
-    majority) or an attention spike → a pump measured in minutes-to-hours, not days → distribution
-    (early holders selling to late arrivals) → round-trip or liquidity death. A small number of
-    tokens have second lives ("revivals") — genuinely new episodes of attention after the first
-    death — and an even smaller number become durable runners. Our entire platform exists to
+    majority) or an attention spike → a pump measured in minutes-to-hours, not days →
+    distribution (early holders selling to late arrivals) → round-trip or liquidity death. A small
+    number of tokens have second lives ("revivals") — genuinely new episodes of attention after
+    the first death — and an even smaller number become durable runners. Our platform exists to
     measure which is which <em>after the fact</em>, honestly, because predicting it in advance is
     largely unsolved — by us and by everyone else, whatever their marketing says.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
 
     <h2 id="how-service-works">3. What Alphalumina is — and what it is not</h2>
     <h3>3.1 What the Service does</h3>
@@ -176,156 +200,267 @@
       <li>It does <b style="color:var(--fg)">not</b> give buy/sell recommendations, price targets, or individualized advice. Anything that looks like a pick is a <em>measurement subject</em>, published so it can be graded in public later.</li>
       <li>It does <b style="color:var(--fg)">not</b> have a proven predictive edge for returns. Our scoring engine currently functions as a risk filter; we publish that because it is true. If that changes, it will change because forward, out-of-sample evidence says so — and you will see that evidence on the <a href="/receipts">receipts page</a> first.</li>
     </ul>
-    <h3>3.3 Known limits of our data — what we cannot see</h3>
-    <ul>
-      <li><b style="color:var(--fg)">Hidden wallets.</b> KOL and dev records cover publicly linked wallets only. Undisclosed side wallets are invisible to us and to everyone.</li>
-      <li><b style="color:var(--fg)">Latency and gaps.</b> Data is collected on cycles (typically minutes). Sub-minute spikes and deaths can fall between snapshots. Upstream sources fail, rate-limit, and occasionally return garbage; we filter and flag, but not perfectly.</li>
-      <li><b style="color:var(--fg)">Simulation gap.</b> Paper results cannot fully capture slippage, failed transactions, MEV, and congestion during real stress — precisely the moments that matter most.</li>
-      <li><b style="color:var(--fg)">Small samples.</b> Young measurements carry small n. We publish n on every number and label anything under our evidence thresholds as provisional. A provisional number is a hypothesis, not a fact.</li>
-      <li><b style="color:var(--fg)">Revisions.</b> When better data arrives, measurements get revised. We log revisions instead of hiding them — several of our own published findings exist because our earlier instruments were wrong and we caught them.</li>
-    </ul>
+    <h3>3.3 Experimental, early-stage software</h3>
+    <p>Alphalumina is an early-stage research platform under active development. Features change,
+    measurements get revised, models get retired when they fail validation, and parts of the
+    pipeline break and get fixed. Numbers young enough to carry small sample sizes are labeled
+    provisional — a provisional number is a hypothesis, not a fact. Treat the whole platform
+    accordingly.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
 
-    <h2 id="risk">4. Full risk disclosure</h2>
+    <h2 id="risk">4. Market &amp; asset risks</h2>
     <div class="callout">
-      <p><b style="color:var(--fg)">Nothing on this site is financial, investment, legal, or tax advice.</b>
-      Alphalumina is research and measurement software. No content here — no brief, radar entry,
-      score, grade, receipt, scorecard, or chart — is a recommendation, solicitation, or offer to
-      buy or sell any asset. We are not licensed advisors, brokers, or dealers in any jurisdiction.</p>
+      <p><b style="color:var(--fg)">Nothing on this site is financial, investment, legal, tax, or trading
+      advice.</b> Alphalumina is research and measurement software. No content here — no brief,
+      radar entry, score, grade, receipt, scorecard, or chart — is a recommendation, solicitation,
+      or offer to buy or sell any asset. We are not licensed advisors, brokers, or dealers in any
+      jurisdiction.</p>
     </div>
-    <h3>4.1 Market risk</h3>
+    <h3>4.1 Total-loss risk</h3>
     <p>Assume any meme-coin position can go to zero, quickly and permanently. These assets have no
     cash flows, no underlying business, and in most cases no reason to exist beyond attention.
-    Prices are driven by reflexive crowd behavior and can drop 90%+ in minutes. Past pumps — even
-    honestly measured ones — do not predict future pumps. Our own persistence testing shows that
-    even track records that look real often fail to persist.</p>
-    <h3>4.2 Liquidity risk</h3>
-    <p>You may be unable to exit a position at anything near the displayed price, or at all.
-    Displayed market caps massively overstate realizable value on thin pools. Liquidity can be
-    withdrawn by its providers at any moment without warning.</p>
-    <h3>4.3 Fraud and manipulation risk</h3>
+    Prices are driven by reflexive crowd behavior and can drop 90%+ in minutes.</p>
+    <h3>4.2 Fraud and manipulation risk</h3>
     <p>This market contains rug pulls, honeypots (tokens coded so you can buy but not sell),
-    wash-traded volume, bundled fake holders, paid shills, coordinated pump-and-dumps, and
-    impersonation scams. Assume manipulation is the default condition, not the exception. No tool
-    — ours included — detects all of it.</p>
-    <h3>4.4 Technical risk</h3>
+    wash-traded volume, bundled fake holders, paid shills, coordinated pump-and-dumps, bot
+    swarms, and impersonation scams. Assume manipulation is the default condition, not the
+    exception. No tool — ours included — detects all of it.</p>
+    <h3>4.3 Smart-contract and technical risk</h3>
     <p>Smart contracts can have bugs or backdoors. Networks congest at exactly the moments
-    everyone wants to exit. Transactions fail, front-running (MEV) extracts value from your fills,
-    and wallets can be drained by malicious token approvals or phishing. Self-custody means
-    mistakes are irreversible: there is no password reset, no chargeback, no insurance.</p>
-    <h3>4.5 Counterparty and platform risk</h3>
-    <p>Launchpads, exchanges, RPC providers, and data sources can fail, censor, freeze, or
-    disappear. Alphalumina itself depends on third-party data feeds that can degrade without
-    notice; our <a href="/methodology">data-health reporting</a> exists because this happens
-    regularly.</p>
-    <h3>4.6 Regulatory and tax risk</h3>
-    <p>The legal status of meme-coins is unsettled and varies by jurisdiction. Rules can change
-    retroactively. Trading may be restricted or illegal where you live — it is your responsibility
-    to know. Trades are generally taxable events; high-frequency meme-coin trading can create
-    complex tax obligations even in losing years. Consult a qualified tax professional.</p>
-    <h3>4.7 Psychological risk</h3>
+    everyone wants to exit. Wallets can be drained by malicious token approvals or phishing. RPC
+    providers fail or lag. Self-custody means mistakes are irreversible: no password reset, no
+    chargeback, no insurance.</p>
+    <h3>4.4 Regulatory, tax, and eligibility risk</h3>
+    <p>The legal status of meme-coins is unsettled and varies by jurisdiction. Rules can change,
+    sometimes retroactively. Trading may be restricted or illegal where you live — knowing this is
+    your responsibility, and the Service is not directed at any jurisdiction where accessing it
+    would be unlawful. Trades are generally taxable events; high-frequency meme-coin trading can
+    create complex tax obligations even in losing years. Consult a qualified tax professional.</p>
+    <h3>4.5 Psychological risk</h3>
     <p>This market is engineered — by its structure and by the people profiting from it — to
-    produce FOMO, revenge trading, and addiction-like engagement loops. The 24/7 casino does not
-    close. If trading is affecting your finances, sleep, or relationships, stop. If you are in a
+    produce FOMO, revenge trading, and addiction-like engagement loops. The casino does not close.
+    If trading is affecting your finances, sleep, or relationships, stop. If you are in a
     difficult financial situation, this market is the worst possible place to try to fix it: the
     measured odds above apply most brutally to people who cannot afford the losses.</p>
-    <h3>4.8 The only risk rules that matter</h3>
-    <ul>
-      <li>Never commit money you cannot afford to lose entirely — "entirely" meaning: it goes to zero and your life is unchanged.</li>
-      <li>Decide your exit before you enter. The data says holding through peaks is the default losing move.</li>
-      <li>Treat every displayed number — on any platform — as potentially manipulated until you understand who benefits from you believing it.</li>
-      <li>If you need advice for your specific situation, get it from a licensed professional. We are not one and will never pretend to be.</li>
-    </ul>
+    <a class="backtop" href="#top">↑ back to top</a>
 
-    <h2 id="terms">5. Terms of Use</h2>
-    <h3>5.1 The agreement</h3>
+    <h2 id="execution">5. Execution &amp; tradeability risks</h2>
+    <p>Even when a token "goes up," turning that into realized profit is a separate problem. This
+    distinction — <b style="color:var(--fg)">an eventual runner versus a realistically tradeable
+    opportunity</b> — is central to how we grade everything, because it is where most honest-looking
+    track records lie.</p>
+    <h3>5.1 The eventual-runner trap</h3>
+    <p>A token can be down 90–100% from a signal before later becoming a runner. A caller who said
+    "it did 10x eventually" is not lying — but a real position entered at their call would have
+    been wiped out or shaken out long before the run. In our forward testing, tokens in exactly
+    this pattern went through <em>complete</em> drawdowns before their eventual runs. We never
+    count an eventual runner as a successful call when the original entry would have been
+    destroyed first — and you should apply the same test to every track record you see anywhere.</p>
+    <h3>5.2 Slippage and price impact</h3>
+    <p>On thin liquidity, the act of buying moves the price against you, and the act of selling
+    moves it against you again. A "10% move" can be fully consumed by the round-trip cost of
+    getting in and out. Displayed prices are for marginal, tiny trades — not for your size.</p>
+    <h3>5.3 Spread, routing, and fill quality</h3>
+    <p>Decentralized trades route through pools and aggregators. Routes fail, quotes go stale
+    between signing and execution, partial fills happen, and failed transactions still cost fees.
+    During volatile moments — precisely when you most want to act — fill quality degrades sharply
+    and front-running (MEV) extracts value from your transactions.</p>
+    <h3>5.4 Exit reality</h3>
+    <p>Liquidity can be withdrawn by its providers at any moment without warning. You may be
+    unable to exit at anything near the displayed price, or at all. Deciding your exit before you
+    enter is the only defense the data supports: holding through peaks is the measured default
+    losing move.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
+
+    <h2 id="research">6. Research-method &amp; AI risks — including ours</h2>
+    <p>Alphalumina's core promise is honest measurement. Part of honest measurement is telling you
+    exactly how research like ours goes wrong. Every failure mode below is real — several are
+    things <em>our own instruments did</em> before we caught and published them.</p>
+    <h3>6.1 Signal scores are research outputs, not guarantees</h3>
+    <p>Every score, grade, lane assignment, and transition odd on this platform is a statistical
+    statement about the past behavior of a category — never a prediction about a specific token's
+    future. A token with "good" measurements can die instantly; a rejected token can run.</p>
+    <h3>6.2 Backtesting limitations</h3>
+    <p>Backtests replay history with today's knowledge and hindsight-clean data. They
+    systematically overstate what would have been achievable: real-time data is messier, fills are
+    worse, and decisions made under uncertainty differ from decisions graded after the fact. We
+    treat backtests as hypothesis generators only; nothing goes into our validated column without
+    forward, out-of-sample evidence.</p>
+    <h3>6.3 Survivorship bias</h3>
+    <p>Datasets quietly lose their corpses. Our own early cohort statistics looked far too good
+    because our scanner stopped watching tokens shortly after they trended — we saw the pumps and
+    missed the deaths. The published 56% round-trip figure exists because we rebuilt the cohort
+    from full price history and found the bodies. Any statistic that seems too good — anywhere —
+    should make you ask: <em>where are the dead ones?</em></p>
+    <h3>6.4 Selection bias</h3>
+    <p>How you pick what to measure changes the answer. When we first harvested influencer calls
+    by searching tokens that had already moved, every account looked like a winner — because we
+    had only collected calls on winners. We rebuilt collection around full account histories,
+    losers included, and hit rates fell from a fake 85–100% to an honest ~37%. Every leaderboard
+    you see anywhere was built with some selection rule; most are never disclosed.</p>
+    <h3>6.5 Look-ahead bias</h3>
+    <p>Using information that was not actually available at decision time — grading a "call" with
+    data from an hour later, or scoring an entry with the day's eventual peak. Our grading is
+    timestamped to what was knowable at the moment of each call, and our out-of-sample tests split
+    strictly by time (classify early, measure later). When you evaluate anyone's track record, ask
+    what they knew <em>when</em>.</p>
+    <h3>6.6 Overfitting</h3>
+    <p>Test enough signal combinations against the same history and some will fit it perfectly —
+    by chance. Those patterns evaporate on new data. It is why most published "strategies" fail
+    live, and why our pipeline separates research, shadow testing, and validated status: a pattern
+    only graduates when it keeps working on data it has never seen.</p>
+    <h3>6.7 AI-generated analysis and model error</h3>
+    <p>Parts of our pipeline — classification, text analysis, anomaly detection, written summaries
+    — use AI models. AI systems make mistakes: they misclassify, hallucinate plausible-sounding
+    but wrong statements, inherit biases from training data, and degrade when the market shifts
+    away from what they learned. AI output on this platform is subject to the same rule as
+    everything else — it must survive measurement — but between measurement cycles, errors can and
+    do appear. Never act on any single AI-generated statement without independent verification.</p>
+    <h3>6.8 Simulated (paper) performance</h3>
+    <p>Paper-trading results are simulations. They model fill costs deliberately, but cannot fully
+    capture slippage under stress, failed transactions, MEV, congestion, or the psychology of real
+    money. Simulated results systematically flatter reality. All paper results on this platform
+    are labeled simulated; treat them as an upper bound, not an expectation.</p>
+    <h3>6.9 Historical performance</h3>
+    <p>All grades and receipts are historical measurements, produced after the fact. Past
+    outcomes — including honestly graded ones — do not predict future results. Our own persistence
+    testing found that even track records that look real often fail to persist: wallets with good
+    histories performed no better on future trades than wallets with bad ones.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
+
+    <h2 id="data">7. Data, third-party &amp; platform risks</h2>
+    <h3>7.1 Third-party data and APIs</h3>
+    <p>Our measurements are built on external sources: on-chain data via RPC providers, market
+    data from charting and screener services (e.g., GMGN and similar), social data from X and
+    related feeds, news feeds, and wallet-data providers. Each can be delayed, rate-limited,
+    incomplete, revised, or simply wrong — and each can change or shut off access without notice.
+    We filter, cross-check, and flag anomalies, but garbage occasionally gets through; several of
+    our published corrections exist because an upstream source lied to us convincingly.</p>
+    <h3>7.2 Missing, stale, and delayed information</h3>
+    <p>Data is collected on cycles, typically minutes apart. Sub-minute spikes and deaths fall
+    between snapshots. A number on this site was true when collected; the market may have moved
+    since. Where data is missing we aim to say "missing" rather than silently show zero — if you
+    see a number that seems impossible, treat it as suspect and tell us.</p>
+    <h3>7.3 Source-reliability limits: KOLs, whales, devs, social</h3>
+    <p>Our source scorecards measure what is publicly visible. KOL and dev records cover publicly
+    linked wallets only — many trade from undisclosed side wallets invisible to us and to
+    everyone. Social metrics can be botted; follower counts and engagement are manipulable and are
+    treated as metadata, never as reliability. Whale labels identify wallets, not intentions — a
+    "smart money" buy can be the setup for a dump. Every scorecard on this platform is incomplete
+    by construction, and we say so on the page rather than pretend otherwise.</p>
+    <h3>7.4 Outages and interruptions</h3>
+    <p>The Service can go down — maintenance, upstream failures, infrastructure faults, or plain
+    bugs. Pages regenerate on schedules and can temporarily show stale editions. We monitor our
+    own pipeline health and publish data-quality warnings, but you should never build a
+    time-critical process on the assumption that this (or any) platform will be up at the moment
+    you need it.</p>
+    <h3>7.5 Your responsibility: verify independently</h3>
+    <p>Nothing here removes your obligation to verify before acting. Check contract addresses
+    against multiple sources. Confirm liquidity on-chain. Cross-reference any measurement that
+    would change your decision. The correct amount of trust in any single data source — including
+    us — is: <em>enough to investigate further, never enough to act alone.</em></p>
+    <a class="backtop" href="#top">↑ back to top</a>
+
+    <h2 id="terms">8. Terms of Use</h2>
+    <h3>8.1 The agreement</h3>
     <p>By accessing alphalumina.com or any Alphalumina service ("the Service"), you agree to these
     terms. If you do not agree, do not use the Service.</p>
-    <h3>5.2 What the Service is</h3>
+    <h3>8.2 What the Service is</h3>
     <p>Alphalumina provides research, analytics, and measurement tooling for Solana-ecosystem
     tokens. The Service is informational. It does not execute trades, custody funds, provide
     individualized advice, or act as a broker, dealer, exchange, or advisor of any kind.</p>
-    <h3>5.3 Eligibility and responsibility</h3>
+    <h3>8.3 Eligibility and responsibility</h3>
     <p>You must be of legal age in your jurisdiction and legally permitted to access this kind of
     information where you live. You are solely responsible for every decision you make, for
     compliance with your local laws, and for your own taxes. Using the Service creates no
     fiduciary, advisory, or professional relationship between you and Alphalumina.</p>
-    <h3>5.4 Acceptable use</h3>
+    <h3>8.4 Acceptable use</h3>
     <p>You may not: misrepresent Service output as investment advice (yours or ours); resell,
     scrape, or redistribute the Service or its data without written permission; use the Service in
     connection with market manipulation of any kind; present receipts, grades, or scorecards out
     of context in a way that implies return promises; or attempt to disrupt, probe, or overload
     the Service.</p>
-    <h3>5.5 Intellectual property</h3>
+    <h3>8.5 Intellectual property</h3>
     <p>The Service's content, methodology descriptions, and published measurements are ours.
     On-chain data itself is public. You may quote our published findings with attribution and a
     link; you may not republish them stripped of their caveats and sample sizes — the caveats are
     part of the finding.</p>
-    <h3>5.6 Third-party links and data</h3>
-    <p>The Service links to third-party tools (block explorers, charting sites) and consumes
-    third-party data. We do not control them, do not endorse them, and are not responsible for
-    what you encounter there.</p>
-    <h3>5.7 No warranties</h3>
+    <h3>8.6 Third-party links</h3>
+    <p>The Service links to third-party tools (block explorers, charting sites). We do not control
+    them, do not endorse them, and are not responsible for what you encounter there.</p>
+    <h3>8.7 No warranties</h3>
     <p>The Service is provided "as is" and "as available," without warranties of any kind, express
     or implied — including accuracy, completeness, timeliness, merchantability, fitness for a
     particular purpose, and non-infringement. Data can be delayed, incomplete, or wrong; upstream
     sources fail; measurements get revised when better data arrives (we log revisions rather than
     hide them).</p>
-    <h3>5.8 Limitation of liability</h3>
+    <h3>8.8 Limitation of liability</h3>
     <p>To the maximum extent permitted by law, Alphalumina and its operators are not liable for
     any direct, indirect, incidental, consequential, or special damages — including trading
     losses, lost profits, or lost data — arising from use of, or inability to use, the Service,
     even if advised of the possibility. Your sole and exclusive remedy for dissatisfaction with
     the Service is to stop using it. Where liability cannot be excluded, it is limited to the
-    amount you paid us for the Service in the twelve months before the claim (currently: nothing).</p>
-    <h3>5.9 Indemnification</h3>
+    amount you paid us for the Service in the twelve months before the claim (currently:
+    nothing).</p>
+    <h3>8.9 Indemnification</h3>
     <p>You agree to indemnify and hold harmless Alphalumina and its operators from claims arising
     out of your use of the Service, your violation of these terms, or your violation of any law or
     third-party right.</p>
-    <h3>5.10 Termination and changes</h3>
+    <h3>8.10 Termination, changes, severability</h3>
     <p>We may modify, suspend, or discontinue any part of the Service at any time, and may update
     these terms as the platform evolves. Material changes will be reflected by the "last updated"
-    date at the top of this page. Continued use after changes constitutes acceptance.</p>
-    <h3>5.11 Severability</h3>
-    <p>If any provision of these terms is found unenforceable, the remaining provisions stay in
-    effect.</p>
+    date at the top of this page; continued use after changes constitutes acceptance. If any
+    provision of these terms is found unenforceable, the remaining provisions stay in effect.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
 
-    <h2 id="privacy">6. Privacy Policy</h2>
-    <h3>6.1 What we collect</h3>
+    <h2 id="privacy">9. Privacy Policy</h2>
+    <h3>9.1 What we collect</h3>
     <ul>
-      <li><b style="color:var(--fg)">Waitlist email.</b> If you join the waitlist, we store the email address you
-      submit. It is processed by Netlify Forms, our hosting provider, and used only to contact you
-      about Alphalumina access and updates.</li>
+      <li><b style="color:var(--fg)">Waitlist email.</b> If you join the waitlist, we store the email address
+      you submit. It is processed by Netlify Forms, our hosting provider, and used only to contact
+      you about Alphalumina access and updates.</li>
       <li><b style="color:var(--fg)">Standard server logs.</b> Our hosting provider (Netlify) keeps standard
       access logs (IP address, user agent, pages requested) for operations and abuse prevention,
       under its own privacy policy.</li>
       <li><b style="color:var(--fg)">Nothing else.</b> No accounts, no passwords, no wallet connections, no
-      payment data, no cookies set by us, no third-party ad trackers, no analytics scripts,
-      no fingerprinting.</li>
+      payment data, no cookies set by us, no third-party ad trackers, no analytics scripts, no
+      fingerprinting.</li>
     </ul>
-    <h3>6.2 Public blockchain data</h3>
+    <h3>9.2 Public blockchain data</h3>
     <p>The wallets, transactions, and token data we analyze are public blockchain information,
     readable by anyone. When we publish measured records for dev or KOL wallets, we publish the
     public identity those wallets already carry (e.g., the handle major tools tag them with) and
     measured on-chain facts — never private information, because we have none.</p>
-    <h3>6.3 What we never do</h3>
+    <h3>9.3 What we never do</h3>
     <p>We do not sell, rent, or share your email or any personal data with third parties for their
     marketing. We do not build advertising profiles. We do not buy data about you.</p>
-    <h3>6.4 Retention and your rights</h3>
+    <h3>9.4 Retention and your rights</h3>
     <p>Waitlist emails are kept until you ask us to delete them or the waitlist is retired. Want
-    your email removed? Contact us via the address provided in your waitlist confirmation (or any
-    channel on the site) and we will delete it. Depending on your jurisdiction (e.g., GDPR, CCPA)
-    you may have additional rights — access, correction, deletion, portability. Email us and we
-    will honor them; with the little data we hold, this is easy.</p>
-    <h3>6.5 Changes to this policy</h3>
+    your email removed? Contact us (section 10) and we will delete it. Depending on your
+    jurisdiction (e.g., GDPR, CCPA) you may have additional rights — access, correction, deletion,
+    portability. Contact us and we will honor them; with the little data we hold, this is easy.</p>
+    <h3>9.5 Changes to this policy</h3>
     <p>If we later add accounts, analytics, or any new data processing, this policy will be
     updated <em>before</em> the change ships, and the "last updated" date at the top of this page
     will move.</p>
+    <a class="backtop" href="#top">↑ back to top</a>
+
+    <h2 id="contact">10. Contact</h2>
+    <p>Questions about these terms, a privacy request, a data error you spotted, or anything else:</p>
+    <ul>
+      <li>X / Twitter: <a href="https://x.com/Alphaluminahq" target="_blank" rel="noopener">@Alphaluminahq</a></li>
+      <li>Waitlist members can reply directly to any email we send.</li>
+    </ul>
+    <p>If you believe a published measurement is wrong, please include the page, the number, and
+    the time you saw it — corrections are part of the product, and verified errors get fixed and
+    logged publicly.</p>
 
     <div class="callout gold">
       <p><b style="color:var(--fg)">One last time, because it matters:</b> this platform exists to measure a
       market where most participants lose. Use it to understand what is real. Do not use it as a
       reason to believe you will be the exception — the numbers on this page are the numbers.</p>
     </div>
+    <a class="backtop" href="#top">↑ back to top</a>
 
   </div></div>
 </section>

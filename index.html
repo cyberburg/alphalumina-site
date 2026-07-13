@@ -91,6 +91,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:68px;d
 .hero-right{position:relative;overflow:hidden}
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%}
 .hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 60% 50%,rgba(196,154,58,.12) 0%,rgba(3,3,12,0) 70%);z-index:0}
+.core-legend{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:8px;z-index:4;flex-wrap:wrap;justify-content:center;max-width:92%}
+.core-chip{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,240,234,.55);border:1px solid rgba(196,154,58,.22);background:rgba(3,3,12,.55);padding:4px 9px;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.core-chip i{width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite}
+.core-chip:nth-child(2) i{animation-delay:.5s}.core-chip:nth-child(3) i{animation-delay:1s}
+.core-chip:nth-child(4) i{animation-delay:1.5s}.core-chip:nth-child(5) i{animation-delay:2s}
+.core-chip.rej i{background:#ef8888}
+@media(prefers-reduced-motion:reduce){.core-chip i,.hero-badge-dot,.orbit-logo img{animation:none!important}}
+@media(max-width:960px){.core-legend{bottom:10px;gap:6px}.core-chip{font-size:8px;padding:3px 7px}}
 
 /* Doge astronaut center */
 .doge-astro{position:absolute;z-index:2;width:120px;height:130px;
@@ -291,6 +299,13 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
   </div>
   <div class="hero-right">
     <canvas id="hero-canvas"></canvas>
+    <div class="core-legend" aria-label="Alpha Lumina signal pipeline stages">
+      <span class="core-chip"><i></i>Early Discovery</span>
+      <span class="core-chip"><i></i>Source Measured</span>
+      <span class="core-chip"><i></i>Signal Validated</span>
+      <span class="core-chip"><i></i>Tradeability Check</span>
+      <span class="core-chip rej"><i></i>Risk Rejected</span>
+    </div>
     <!-- Orbiting logos — positioned by JS in sync with data stream lines -->
     <div class="orbit-logo" id="slogo-0"><img src="https://solana.com/src/img/branding/solanaLogoMark.png" alt="Solana"><span>Solana</span></div>
     <div class="orbit-logo" id="slogo-1"><img src="https://pump.fun/pump-logomark.svg?dpl=dpl_HxfgPG2sso8UYFsg3YnknWStvLBG" alt="Pump.fun"><span>Pump.fun</span></div>
@@ -598,39 +613,92 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--fg3);letter-spacing:
 function rgba(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`}
 
 /* ══ HERO CANVAS — Particle sphere (unchanged) ══ */
-(function(){const c=document.getElementById('hero-canvas'),ctx=c.getContext('2d');let W,H,angle=0;
-const GOLD='#c49a3a',TEAL='#3a8acc',WHITE='#f0f0ea';
-const PTS=220,pts=[];
-for(let i=0;i<PTS;i++){const t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);
-pts.push({ox:Math.sin(p)*Math.cos(t),oy:Math.sin(p)*Math.sin(t),oz:Math.cos(p),brightness:Math.random()})}
-const glows=[{rx:.55,ry:.3,size:180,color:'#3a6acc',a:.18},{rx:.75,ry:.65,size:140,color:'#6a3acc',a:.14},
-{rx:.4,ry:.6,size:100,color:'#c49a3a',a:.10},{rx:.85,ry:.35,size:80,color:'#3aaac4',a:.12}];
-function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}
-function drawFrame(){ctx.clearRect(0,0,W,H);angle+=.003;
-const cx=W*.52,cy=H*.5,sr=Math.min(W,H)*.28;
-glows.forEach(g=>{const gx=g.rx*W,gy=g.ry*H,gr=ctx.createRadialGradient(gx,gy,0,gx,gy,g.size);
-gr.addColorStop(0,rgba(g.color,g.a));gr.addColorStop(1,'transparent');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(gx,gy,g.size,0,Math.PI*2);ctx.fill()});
-const sg=ctx.createRadialGradient(cx,cy,0,cx,cy,sr*1.5);sg.addColorStop(0,rgba(GOLD,.12));sg.addColorStop(.5,rgba(GOLD,.04));sg.addColorStop(1,'transparent');
-ctx.fillStyle=sg;ctx.beginPath();ctx.arc(cx,cy,sr*1.5,0,Math.PI*2);ctx.fill();
-for(let i=0;i<6;i++){const r=sr*(.55+i*.22),sa=angle*.6+i*.5,sp=Math.PI*(.7+i*.08);
-ctx.beginPath();ctx.arc(cx,cy,r,sa,sa+sp);ctx.strokeStyle=rgba(GOLD,.06-i*.008);ctx.lineWidth=.8;ctx.stroke();
-ctx.beginPath();ctx.arc(cx,cy,r*.92,sa+Math.PI,sa+Math.PI+sp*.6);ctx.setLineDash([2,8]);ctx.strokeStyle=rgba(TEAL,.08-i*.01);ctx.lineWidth=.6;ctx.stroke();ctx.setLineDash([])}
-const ca=Math.cos(angle),sa2=Math.sin(angle),cy2=Math.cos(angle*.3),sy2=Math.sin(angle*.3);
-pts.forEach(p=>{const rx=p.ox*ca-p.oz*sa2,ry1=p.oy,rz=p.ox*sa2+p.oz*ca;
-const ry=ry1*cy2-rz*sy2,rz2=ry1*sy2+rz*cy2;const z=rz2+2.2,sc=2.2/z;
-const px=cx+rx*sr*sc,py=cy+ry*sr*sc,depth=(rz2+1)/2;if(depth<.02)return;
-const size=Math.max(.4,1.8*sc*depth),alpha=depth*(.6+p.brightness*.4);
-const isGold=p.brightness>.75&&depth>.6,color=isGold?GOLD:WHITE;
-if(isGold&&depth>.7){const eg=ctx.createRadialGradient(px,py,0,px,py,size*4);
-eg.addColorStop(0,rgba(GOLD,alpha*.4));eg.addColorStop(1,'transparent');ctx.fillStyle=eg;ctx.beginPath();ctx.arc(px,py,size*4,0,Math.PI*2);ctx.fill()}
-ctx.beginPath();ctx.arc(px,py,size,0,Math.PI*2);ctx.fillStyle=rgba(color,alpha*(isGold?.9:.55));ctx.fill()});
-ctx.beginPath();ctx.ellipse(cx,cy,sr*1.02,sr*.18,0,0,Math.PI*2);ctx.strokeStyle=rgba(GOLD,.12);ctx.lineWidth=.7;ctx.stroke();
-[.2,.9,1.8,2.9,3.8,4.9].forEach((a,i)=>{const sa3=a+angle*.4,inner=sr*1.05,outer=sr*(1.4+.2*(i%2===0?1:0));
-const x1=cx+Math.cos(sa3)*inner,y1=cy+Math.sin(sa3)*inner,x2=cx+Math.cos(sa3)*outer,y2=cy+Math.sin(sa3)*outer;
-ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.strokeStyle=rgba(i%2===0?GOLD:TEAL,.15);ctx.lineWidth=.6;ctx.stroke();
-ctx.beginPath();ctx.arc(x2,y2,1.5,0,Math.PI*2);ctx.fillStyle=rgba(i%2===0?GOLD:TEAL,.5);ctx.fill();
-const el=document.getElementById('slogo-'+i);if(el){el.style.left=(x2-18)+'px';el.style.top=(y2-18)+'px'}})}
-resize();addEventListener('resize',resize);(function loop(){requestAnimationFrame(loop);drawFrame()})()})();
+/* ══ SIGNAL INTELLIGENCE CORE ══
+   Noisy market data enters from the ecosystem edge; each packet is measured at
+   ring boundaries (Discovery -> Source -> Validation -> Risk -> Tradeability).
+   Weak/manipulated signals are rejected with a reason; survivors reach the core
+   and their outcomes keep being tracked. Every moving element = a real product
+   function. Canvas 2D, DPR-aware, reduced-motion + offscreen aware. */
+(function(){const c=document.getElementById('hero-canvas');if(!c)return;
+const ctx=c.getContext('2d');if(!ctx)return; /* CSS gradient + legend chips remain as fallback */
+const GOLD='#c49a3a',GOLDB='#e8c56a',TEAL='#3a8acc',WHITE='#f0f0ea',RED='#ef8888',PUR='#9a6ae0';
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W,H,DPR=1,angle=0,frame=0,coreGlow=0,small=false,visible=true,RINGS,LABELS;
+const packets=[],fx=[];
+const SRC=[{l:'LAUNCH',c:TEAL},{l:'WALLET EVENT',c:TEAL},{l:'KOL MENTION',c:PUR},{l:'VOLUME SPIKE',c:WHITE},{l:'SOCIAL SIGNAL',c:PUR},{l:'MARKET DATA',c:TEAL}];
+const REASONS=['CLONE RISK','DIRTY SOURCE','CROWDING DETECTED','LIQUIDITY FAILED','RISK REJECTED','LATE / AFTER MOVE'];
+function setRings(){if(small){RINGS=[1,.64,.36];LABELS=['DISCOVERY','VALIDATION','RISK']}
+else{RINGS=[1,.84,.67,.5,.35];LABELS=['DISCOVERY','SOURCE MEASUREMENT','VALIDATION','RISK','TRADEABILITY']}}
+function resize(){DPR=Math.min(devicePixelRatio||1,2);W=c.offsetWidth;H=c.offsetHeight;
+c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);small=W<640;setRings()}
+function geo(){const R=Math.min(W,H)*.37;return{cx:W*.52,cy:H*.48,R,coreR:R*.155}}
+function spawn(preset){const t=SRC[(Math.random()*SRC.length)|0],a=Math.random()*Math.PI*2;
+const accepted=Math.random()<.3,rejectRing=accepted?-1:1+((Math.random()*(RINGS.length-1))|0);
+packets.push(Object.assign({a,r:1.24,t,accepted,rejectRing,state:'in',life:0,
+speed:.0018+Math.random()*.0013,drift:(Math.random()-.5)*.004,showLabel:Math.random()<.3},preset||{}))}
+function drawCore(g){const{cx,cy,coreR}=g,glow=.5+coreGlow;coreGlow*=.94;
+let gr=ctx.createRadialGradient(cx,cy,0,cx,cy,coreR*3.4);gr.addColorStop(0,rgba(GOLD,.12+.3*glow));gr.addColorStop(1,'transparent');
+ctx.fillStyle=gr;ctx.beginPath();ctx.arc(cx,cy,coreR*3.4,0,7);ctx.fill();
+gr=ctx.createRadialGradient(cx-coreR*.4,cy-coreR*.5,0,cx,cy,coreR*1.2);gr.addColorStop(0,'#2c2515');gr.addColorStop(1,'#0a0a14');
+ctx.beginPath();ctx.arc(cx,cy,coreR,0,7);ctx.fillStyle=gr;ctx.fill();
+ctx.strokeStyle=rgba(GOLDB,.6);ctx.lineWidth=1.2;ctx.stroke();
+for(const off of[0,Math.PI]){ctx.beginPath();ctx.arc(cx,cy,coreR*1.32,angle*2+off,angle*2+off+1.3);
+ctx.strokeStyle=rgba(GOLD,.45);ctx.lineWidth=1;ctx.stroke()}
+const s=coreR*.55,lg=ctx.createLinearGradient(cx-s,cy+s,cx+s,cy-s);
+lg.addColorStop(0,'#a0702a');lg.addColorStop(.5,GOLD);lg.addColorStop(1,GOLDB);
+ctx.strokeStyle=lg;ctx.lineWidth=Math.max(2,coreR*.15);ctx.lineCap='round';
+ctx.beginPath();ctx.moveTo(cx-s,cy+s*.85);ctx.lineTo(cx,cy-s);ctx.lineTo(cx+s,cy+s*.85);ctx.stroke();
+ctx.beginPath();ctx.moveTo(cx-s*.42,cy+s*.22);ctx.lineTo(cx+s*.42,cy+s*.22);ctx.stroke();
+ctx.font='500 8.5px "DM Mono",monospace';ctx.fillStyle=rgba(WHITE,.45);ctx.textAlign='center';
+ctx.fillText('OUTCOMES TRACKED',cx,cy+coreR*2.05)}
+function drawRings(g){const{cx,cy,R}=g;RINGS.forEach((f,i)=>{const r=R*f;
+ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.strokeStyle=rgba(GOLD,.10);ctx.lineWidth=.8;ctx.stroke();
+const sa=angle*(.2+i*.06)*(i%2?-1:1);
+ctx.beginPath();ctx.arc(cx,cy,r,sa,sa+.9);ctx.strokeStyle=rgba(i%2?TEAL:GOLD,.32);ctx.lineWidth=1;ctx.stroke();
+ctx.font='500 8.5px "DM Mono",monospace';ctx.textAlign='left';ctx.fillStyle=rgba(WHITE,.32);
+ctx.fillText(LABELS[i],cx+r*.707+6,cy-r*.707-6)})}
+function step(g){const{cx,cy,R,coreR}=g;
+for(let i=packets.length-1;i>=0;i--){const p=packets[i];p.life++;
+if(p.state==='in'){p.r-=p.speed*(REDUCE?0:1);p.a+=p.drift;
+const ringHit=RINGS.findIndex(f=>Math.abs(p.r-f)<.006);
+if(ringHit>=0&&ringHit===p.rejectRing&&!p.rejected){p.state='out';p.rejected=true;
+p.reason=REASONS[(Math.random()*REASONS.length)|0];p.life=0;
+fx.push({x:cx+Math.cos(p.a)*p.r*R,y:cy+Math.sin(p.a)*p.r*R,r:2,max:16,c:RED})}
+else if(ringHit>=0&&!p['t'+ringHit]){p['t'+ringHit]=1;
+fx.push({x:cx+Math.cos(p.a)*p.r*R,y:cy+Math.sin(p.a)*p.r*R,r:1,max:9,c:GOLD})}
+if(p.r*R<=coreR*1.15){coreGlow=1;fx.push({x:cx,y:cy,r:coreR,max:R*.9,c:GOLD,ring:1});packets.splice(i,1);continue}}
+else{p.r+=.004;p.a+=.006;if(p.life>110){packets.splice(i,1);continue}}
+const x=cx+Math.cos(p.a)*p.r*R,y=cy+Math.sin(p.a)*p.r*R;
+const prog=Math.max(0,Math.min(1,(1.24-p.r)/1.24));
+const col=p.state==='out'?RED:(p.accepted&&prog>.45?GOLD:p.t.c);
+const al=p.state==='out'?Math.max(0,1-p.life/110):.35+prog*.6;
+const tail=14+prog*10,tx=cx+Math.cos(p.a+(p.state==='out'?-.02:.02))*(p.r+(p.state==='out'?-.03:.045))*R,
+ty=cy+Math.sin(p.a+(p.state==='out'?-.02:.02))*(p.r+(p.state==='out'?-.03:.045))*R;
+ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(x,y);ctx.strokeStyle=rgba(col,al*.35);ctx.lineWidth=.8;ctx.stroke();
+ctx.beginPath();ctx.arc(x,y,p.state==='out'?1.6:1.4+prog,0,7);ctx.fillStyle=rgba(col,al);ctx.fill();
+ctx.font='500 8px "DM Mono",monospace';ctx.textAlign='left';
+if(p.state==='out'&&p.life<80&&!small){ctx.fillStyle=rgba(RED,Math.max(0,.8-p.life/100));ctx.fillText(p.reason,x+6,y-5)}
+else if(p.showLabel&&p.state==='in'&&p.r>.9&&!small){ctx.fillStyle=rgba(WHITE,.3);ctx.fillText(p.t.l,x+6,y-5)}}
+for(let i=fx.length-1;i>=0;i--){const f=fx[i];f.r+=f.ring?1.6:.9;
+const a=Math.max(0,1-f.r/f.max);if(a<=0){fx.splice(i,1);continue}
+ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,7);ctx.strokeStyle=rgba(f.c,a*(f.ring?.35:.6));ctx.lineWidth=f.ring?1:.8;ctx.stroke()}}
+function drawGlows(){[{rx:.55,ry:.3,s:180,c:'#3a6acc',a:.14},{rx:.78,ry:.68,s:140,c:'#6a3acc',a:.10},
+{rx:.35,ry:.62,s:100,c:GOLD,a:.08}].forEach(g=>{const gr=ctx.createRadialGradient(g.rx*W,g.ry*H,0,g.rx*W,g.ry*H,g.s);
+gr.addColorStop(0,rgba(g.c,g.a));gr.addColorStop(1,'transparent');ctx.fillStyle=gr;
+ctx.beginPath();ctx.arc(g.rx*W,g.ry*H,g.s,0,7);ctx.fill()})}
+function placeLogos(g){const{cx,cy,R}=g;for(let i=0;i<6;i++){const el=document.getElementById('slogo-'+i);if(!el)continue;
+const a=i*Math.PI/3+angle*.12+.35,x=cx+Math.cos(a)*R*1.13,y=cy+Math.sin(a)*R*1.13;
+el.style.left=(x-18)+'px';el.style.top=(y-18)+'px'}}
+function drawFrame(){ctx.clearRect(0,0,W,H);if(!REDUCE)angle+=.004;frame++;
+const g=geo();drawGlows();drawRings(g);step(g);drawCore(g);placeLogos(g);
+if(!REDUCE&&frame%(small?52:30)===0&&packets.length<(small?10:22))spawn()}
+resize();addEventListener('resize',resize);
+if(REDUCE){/* static composed frame: pipeline shown, nothing moves */
+for(let i=0;i<8;i++)spawn({r:.3+i*.12,showLabel:i%3===0});
+packets[2].state='out';packets[2].rejected=true;packets[2].reason=REASONS[3];packets[2].life=20;
+drawFrame()}
+else{new IntersectionObserver(es=>{visible=es[0].isIntersecting},{threshold:.05}).observe(c);
+(function loop(){requestAnimationFrame(loop);if(visible)drawFrame()})()}})();
 
 /* ══ TERMINAL SCAN ANIMATION ══ */
 const termObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
