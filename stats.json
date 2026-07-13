@@ -1,8 +1,8 @@
 {
-  "updated_at": 1780886418,
-  "signals_24h": 525,
-  "signals_scored_total": 258876,
-  "paper_pnl_sol": 0,
-  "paper_closes": 0,
-  "paper_wins": 0
+  "updated_at": 1783900800,
+  "signals_24h": 200,
+  "signals_scored_total": 681166,
+  "paper_pnl_sol": -0.1909,
+  "paper_closes": 46,
+  "paper_wins": 12
 }
